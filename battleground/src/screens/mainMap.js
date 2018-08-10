@@ -5,28 +5,81 @@ import SquareGrid from "react-native-square-grid";
 
 class MainMapScreen extends React.Component {
 
-
     render() {
-        let mainSquareArray = [];
-        let smallSquareArray = [];
-
-        for (let i = 0; i < 9; i++) {
-            smallSquareArray.push(
-                <View style={styles.smallSquare}></View>
-            )
-        }
-
-        for (let i = 0; i < 6; i++) {
-            mainSquareArray.push(
-                <View style={styles.mainSquare}>
-                    {smallSquareArray}
-                </View>
-            )
-        }
         return (
             <View style={styles.container}>
                 <View style={styles.mapContainer}>
-                    {mainSquareArray}
+                    <View style={styles.mainSquare} id="o1">
+                        <View style={styles.smallSquare} id="i1"></View>
+                        <View style={styles.smallSquare} id="i2"></View>
+                        <View style={styles.smallSquare} id="i3"></View>
+                        <View style={styles.smallSquare} id="i4"></View>
+                        <View style={styles.smallSquare} id="i5"></View>
+                        <View style={styles.smallSquare} id="i6"></View>
+                        <View style={styles.smallSquare} id="i7"></View>
+                        <View style={styles.smallSquare} id="i8"></View>
+                        <View style={styles.smallSquare} id="i9"></View>
+                    </View>
+
+                    <View style={styles.mainSquare} id="o2">
+                        <View style={styles.smallSquare} id="i1"></View>
+                        <View style={styles.smallSquare} id="i2"></View>
+                        <View style={styles.smallSquare} id="i3"></View>
+                        <View style={styles.smallSquare} id="i4"></View>
+                        <View style={styles.smallSquare} id="i5"></View>
+                        <View style={styles.smallSquare} id="i6"></View>
+                        <View style={styles.smallSquare} id="i7"></View>
+                        <View style={styles.smallSquare} id="i8"></View>
+                        <View style={styles.smallSquare} id="i9"></View>
+                    </View>
+
+                    <View style={styles.mainSquare} id="o3">
+                        <View style={styles.smallSquare} id="i1"></View>
+                        <View style={styles.smallSquare} id="i2"></View>
+                        <View style={styles.smallSquare} id="i3"></View>
+                        <View style={styles.smallSquare} id="i4"></View>
+                        <View style={styles.smallSquare} id="i5"></View>
+                        <View style={styles.smallSquare} id="i6"></View>
+                        <View style={styles.smallSquare} id="i7"></View>
+                        <View style={styles.smallSquare} id="i8"></View>
+                        <View style={styles.smallSquare} id="i9"></View>
+                    </View>
+
+                    <View style={styles.mainSquare} id="o4">
+                        <View style={styles.smallSquare} id="i1"></View>
+                        <View style={styles.smallSquare} id="i2"></View>
+                        <View style={styles.smallSquare} id="i3"></View>
+                        <View style={styles.smallSquare} id="i4"></View>
+                        <View style={styles.smallSquare} id="i5"></View>
+                        <View style={styles.smallSquare} id="i6"></View>
+                        <View style={styles.smallSquare} id="i7"></View>
+                        <View style={styles.smallSquare} id="i8"></View>
+                        <View style={styles.smallSquare} id="i9"></View>
+                    </View>
+
+                    <View style={styles.mainSquare} id="o5">
+                        <View style={styles.smallSquare} id="i1"></View>
+                        <View style={styles.smallSquare} id="i2"></View>
+                        <View style={styles.smallSquare} id="i3"></View>
+                        <View style={styles.smallSquare} id="i4"></View>
+                        <View style={styles.smallSquare} id="i5"></View>
+                        <View style={styles.smallSquare} id="i6"></View>
+                        <View style={styles.smallSquare} id="i7"></View>
+                        <View style={styles.smallSquare} id="i8"></View>
+                        <View style={styles.smallSquare} id="i9"></View>
+                    </View>
+
+                    <View style={styles.mainSquare} id="o6">
+                        <View style={styles.smallSquare} id="i1"></View>
+                        <View style={styles.smallSquare} id="i2"></View>
+                        <View style={styles.smallSquare} id="i3"></View>
+                        <View style={styles.smallSquare} id="i4"></View>
+                        <View style={styles.smallSquare} id="i5"></View>
+                        <View style={styles.smallSquare} id="i6"></View>
+                        <View style={styles.smallSquare} id="i7"></View>
+                        <View style={styles.smallSquare} id="i8"></View>
+                        <View style={styles.smallSquare} id="i9"></View>
+                    </View>
                 </View>
             </View>
         )
