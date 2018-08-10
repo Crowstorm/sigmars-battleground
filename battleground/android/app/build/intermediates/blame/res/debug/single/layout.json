@@ -44,12 +44,12 @@
         "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\redbox_item_frame.xml",
-        "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\layout\\redbox_item_frame.xml"
-    },
-    {
         "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bottom_navigation_item.xml",
         "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.aurelhubert\\ahbottomnavigation\\2.0.6\\res\\layout\\bottom_navigation_item.xml"
+    },
+    {
+        "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\redbox_item_frame.xml",
+        "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\layout\\redbox_item_frame.xml"
     },
     {
         "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
@@ -66,10 +66,6 @@
     {
         "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
         "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_simple.xml"
-    },
-    {
-        "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
-        "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
         "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
@@ -96,16 +92,12 @@
         "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
-        "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_lines.xml"
+        "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
         "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
         "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
-    },
-    {
-        "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
-        "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
         "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
@@ -138,10 +130,6 @@
     {
         "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
         "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_action.xml"
-    },
-    {
-        "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
-        "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_media_action.xml"
     },
     {
         "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
@@ -240,16 +228,8 @@
         "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
-        "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_big_media.xml"
-    },
-    {
         "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fps_view.xml",
         "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\layout\\fps_view.xml"
-    },
-    {
-        "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
-        "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
         "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",

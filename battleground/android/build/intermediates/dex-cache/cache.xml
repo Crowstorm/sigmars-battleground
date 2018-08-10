@@ -111,6 +111,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-vector-icons\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="279750fed3c920d06351dbf32889c1b48203c7ad">
+        <dex dex="D:\Repozytoria\battleground\battleground\android\app\build\intermediates\pre-dexed\debug\battleground-react-native-vector-icons-unspecified_6db85f3263426763e6cda94cba60714c3d41147f.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Crowstorm\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
         jumboMode="false"
         optimize="true"
