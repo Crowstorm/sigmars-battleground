@@ -7,11 +7,15 @@ let smallSquareArray4 = [];
 let smallSquareArray5 = [];
 let smallSquareArray6 = [];
 
+let smallSquareArray = [
+    [], [], [], [], [], []
+]
+
 export const renderEmptyMap = (styles) => {
     let mainSquareArray = [];
-    let smallSquareArray = [
-        [], [], [], [], [], []
-    ]
+    // let smallSquareArray = [
+    //     [], [], [], [], [], []
+    // ]
 
 
 
@@ -26,7 +30,7 @@ export const renderEmptyMap = (styles) => {
         //loop po malych kwadratach
         mainSquareArray.push(
             <View style={styles.mainSquare}>
-                {smallSquareArray1}
+                {smallSquareArray[i]}
             </View>
         )
     }
@@ -86,17 +90,17 @@ const smallSquaresLoop = (index, array, noOfTerr, styles) => {
         if (selected.length !== 0) {
             let isPicked = isSquarePicked(selected, i);
             if (isPicked) {
-                smallSquareArray1.push(
+                smallSquareArray[index].push(
                     <View style={styles.smallSquare}><Text> lol </Text></View>
                 )
             } else {
-                smallSquareArray1.push(
+                smallSquareArray[index].push(
                     <View style={styles.smallSquare}></View>
                 )
             }
 
         } else {
-            smallSquareArray1.push(
+            smallSquareArray[index].push(
                 <View style={styles.smallSquare}></View>
             )
         }
