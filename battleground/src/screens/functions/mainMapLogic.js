@@ -80,10 +80,9 @@ const smallSquaresLoop = (index, array, noOfTerr, styles) => {
     //type of terrain
     const terrains = ["A", "B", "C"];
     //indexes of smaller squares
-    const squareIndex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const squareIndex = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     //chosen indexes
     const shuffled = shuffle(squareIndex);
-    console.log({shuffled})
     let selected = shuffled.slice(0, noOfTerr);
 
     for (let i = 0; i < 9; i++) {
@@ -113,13 +112,12 @@ const smallSquaresLoop = (index, array, noOfTerr, styles) => {
 
 const isSquarePicked = (selected, index) => {
     for (let j = 0; j < selected.length; j++) {
-        if (selected[j] === index) {
-            console.log({selected}, {index})
+        console.log(selected.length, selected[j], index)
+        if (selected[j] == index) {
+            console.log('BINGO');
             return true;
 
-        } else {
-            return false;
-        }
+        } 
     }
 }
 
