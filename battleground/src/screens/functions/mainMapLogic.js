@@ -5,6 +5,7 @@ import Barrel from '../../assets/terrain/barrel.png';
 import Plot from '../../assets/terrain/palisade.png';
 import Mountain from '../../assets/terrain/peaks.png';
 import Tree from '../../assets/terrain/pine-tree.png';
+import Test from '../../assets/terrain/test.png';
 
 let smallSquareArray1 = [];
 let smallSquareArray2 = [];
@@ -51,11 +52,9 @@ export const renderEmptyMap = (styles) => {
 };
 
 const smallSquaresLoop = (index, array, noOfTerr, styles) => {
-    //type of terrain
     const terrainIndex = [0, 1, 2, 3];
-    //indexes of smaller squares
     const squareIndex = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-    //chosen indexes
+
     const shuffled = shuffle(squareIndex);
     let selected = shuffled.slice(0, noOfTerr);
 
@@ -65,7 +64,7 @@ const smallSquaresLoop = (index, array, noOfTerr, styles) => {
             if (isPicked) {
                 let terrainIndex = pickTerrainIndex();
                 smallSquareArray[index].push(
-                    <View style={styles.smallSquare}>{getTerrain(terrainIndex)}</View>
+                     <View style={styles.smallSquare}>{getTerrain(terrainIndex)}{getScenery()}</View>
                 )
             } else {
                 smallSquareArray[index].push(
@@ -101,13 +100,32 @@ const pickTerrainIndex = () => {
 const getTerrain = (index) => {
     switch (index) {
         case 0:
-            return <Image style={{ width: 50, height: 50 }} source={Barrel} />
+            return <Image style={{ width: 10, height: 10 }} source={Barrel} />
         case 1:
-            return <Image style={{ width: 50, height: 50 }} source={Plot} />
+            return <Image style={{ width: 10, height: 10 }} source={Plot} />
         case 2:
-            return <Image style={{ width: 50, height: 50 }} source={Mountain} />
+            return <Image style={{ width: 10, height: 10 }} source={Mountain} />
         case 3:
-            return <Image style={{ width: 50, height: 50 }} source={Tree} />
+            return <Image style={{ width: 10, height: 10 }} source={Tree} />
+    }
+}
+
+const getScenery = () => {
+    let diceRoll = singleDiceRoll();
+
+    switch (diceRoll) {
+        case 1:
+            return <Image style={{ width: 50, height: 50 }} source={Test} />
+        case 2:
+            return <Image style={{ width: 50, height: 50 }} source={Test} />
+        case 3:
+            return <Image style={{ width: 50, height: 50 }} source={Test} />
+        case 4:
+            return <Image style={{ width: 50, height: 50 }} source={Test} />
+        case 5:
+            return <Image style={{ width: 50, height: 50 }} source={Test} />
+        case 6:
+            return <Image style={{ width: 50, height: 50 }} source={Test} />
     }
 }
 
