@@ -45,22 +45,7 @@ const styles = StyleSheet.create({
         width: '33%',
         aspectRatio: 1,
     }
-    // item: {
-    //     flex: 1,
-    //     alignSelf: "stretch",
-    //     // padding: 16
-    // },
-    // content: {
-    //     flex: 1,
-    //     borderColor: "green",
-    //     borderWidth: 1,
-    //     alignItems: "center",
-    //     justifyContent: "center"
-    // },
-    // text: {
-    //     color: "white",
-    //     fontSize: 32
-    // }
+
 })
 
 export default MainMapScreen;

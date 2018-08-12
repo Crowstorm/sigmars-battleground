@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
+
+import Barrel from '../../assets/terrain/barrel.png';
+import Plot from '../../assets/terrain/palisade.png';
+import Mountain from '../../assets/terrain/peaks.png';
+import Tree from '../../assets/terrain/pine-tree.png';
+
 let smallSquareArray1 = [];
 let smallSquareArray2 = [];
 let smallSquareArray3 = [];
@@ -44,8 +50,65 @@ export const renderEmptyMap = (styles) => {
     )
 };
 
+const smallSquaresLoop = (index, array, noOfTerr, styles) => {
+    //type of terrain
+    const terrainIndex = [0, 1, 2, 3];
+    //indexes of smaller squares
+    const squareIndex = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    //chosen indexes
+    const shuffled = shuffle(squareIndex);
+    let selected = shuffled.slice(0, noOfTerr);
+
+    for (let i = 0; i < 9; i++) {
+        if (selected.length !== 0) {
+            let isPicked = isSquarePicked(selected, i);
+            if (isPicked) {
+                let terrainIndex = pickTerrainIndex();
+                smallSquareArray[index].push(
+                    <View style={styles.smallSquare}>{getTerrain(terrainIndex)}</View>
+                )
+            } else {
+                smallSquareArray[index].push(
+                    <View style={styles.smallSquare}></View>
+                )
+            }
+
+        } else {
+            smallSquareArray[index].push(
+                <View style={styles.smallSquare}></View>
+            )
+        }
+
+    }
+}
+
+const isSquarePicked = (selected, index) => {
+    for (let j = 0; j < selected.length; j++) {
+        if (selected[j] == index) {
+            return true;
+        }
+    }
+}
+
 const singleDiceRoll = () => {
     return Math.floor(Math.random() * 6 + 1);
+}
+
+const pickTerrainIndex = () => {
+    return Math.floor(Math.random() * 4);
+}
+
+const getTerrain = (index) => {
+    switch (index) {
+        case 0:
+            return <Image style={{ width: 50, height: 50 }} source={Barrel} />
+        case 1:
+            return <Image style={{ width: 50, height: 50 }} source={Plot} />
+        case 2:
+            return <Image style={{ width: 50, height: 50 }} source={Mountain} />
+        case 3:
+            return <Image style={{ width: 50, height: 50 }} source={Tree} />
+    }
 }
 
 const doubleDiceRoll = () => {
@@ -75,92 +138,22 @@ const getNumberOfTerrains = (diceRoll) => {
     }
 }
 
-//sproboj dodaj klasy
-const smallSquaresLoop = (index, array, noOfTerr, styles) => {
-    //type of terrain
-    const terrains = ["A", "B", "C"];
-    //indexes of smaller squares
-    const squareIndex = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-    //chosen indexes
-    const shuffled = shuffle(squareIndex);
-    let selected = shuffled.slice(0, noOfTerr);
-
-    for (let i = 0; i < 9; i++) {
-        if (selected.length !== 0) {
-            let isPicked = isSquarePicked(selected, i);
-            if (isPicked) {
-                smallSquareArray[index].push(
-                    <View style={styles.smallSquare}><Text> lol </Text></View>
-                )
-            } else {
-                smallSquareArray[index].push(
-                    <View style={styles.smallSquare}></View>
-                )
-            }
-
-        } else {
-            smallSquareArray[index].push(
-                <View style={styles.smallSquare}></View>
-            )
-        }
-
-    }
-
-
-}
-
-
-const isSquarePicked = (selected, index) => {
-    for (let j = 0; j < selected.length; j++) {
-        console.log(selected.length, selected[j], index)
-        if (selected[j] == index) {
-            console.log('BINGO');
-            return true;
-
-        } 
-    }
-}
-
+//shuffling array algorythm
 const shuffle = (array) => {
     var currentIndex = array.length, temporaryValue, randomIndex;
-  
+
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
     }
-  
+
     return array;
-  }
-
-
-
-
-// for (let i = 0; i < 9; i++) {
-//     let ifInserted = false;
-//     //for each selected, jak zgadza sie z i, dodac teren
-//     for (let j = 0; j < selected.length; i++) {
-//         if (selected[j] === i) {
-//             smallSquareArray1.push(
-//                 <View style={styles.smallSquare}><Text>{selected[j]}</Text></View>
-//             )
-//             ifInserted = true;
-//         }
-//     }
-//     if (ifInserted) {
-//         continue;
-//     } else {
-//         this.smallSquareArray1.push(
-//             <View style={styles.smallSquare}></View>
-//         )
-//     }
-//     //    zrolluj efekt
-
-// }
+}
