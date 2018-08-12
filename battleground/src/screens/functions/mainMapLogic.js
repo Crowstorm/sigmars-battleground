@@ -43,11 +43,9 @@ export const renderEmptyMap = (styles) => {
     }
 
     return (
-        <View style={styles.container}>
             <View style={styles.mapContainer}>
                 {mainSquareArray}
             </View>
-        </View>
     )
 };
 
@@ -64,7 +62,7 @@ const smallSquaresLoop = (index, array, noOfTerr, styles) => {
             if (isPicked) {
                 let terrainIndex = pickTerrainIndex();
                 smallSquareArray[index].push(
-                     <View style={styles.smallSquare}>{getTerrain(terrainIndex)}{getScenery()}</View>
+                     <View style={styles.smallSquare}>{getTerrain(styles, terrainIndex)}{getScenery(styles)}</View>
                 )
             } else {
                 smallSquareArray[index].push(
@@ -97,35 +95,35 @@ const pickTerrainIndex = () => {
     return Math.floor(Math.random() * 4);
 }
 
-const getTerrain = (index) => {
+const getTerrain = (styles, index) => {
     switch (index) {
         case 0:
-            return <Image style={{ width: 10, height: 10 }} source={Barrel} />
+            return <Image style={styles.terrain} source={Barrel} />
         case 1:
-            return <Image style={{ width: 10, height: 10 }} source={Plot} />
+            return <Image style={styles.terrain} source={Plot} />
         case 2:
-            return <Image style={{ width: 10, height: 10 }} source={Mountain} />
+            return <Image style={styles.terrain} source={Mountain} />
         case 3:
-            return <Image style={{ width: 10, height: 10 }} source={Tree} />
+            return <Image style={styles.terrain} source={Tree} />
     }
 }
 
-const getScenery = () => {
+const getScenery = (styles) => {
     let diceRoll = singleDiceRoll();
 
     switch (diceRoll) {
         case 1:
-            return <Image style={{ width: 50, height: 50 }} source={Test} />
+            return <Image style={styles.scenery} source={Test} />
         case 2:
-            return <Image style={{ width: 50, height: 50 }} source={Test} />
+            return <Image style={styles.scenery} source={Test} />
         case 3:
-            return <Image style={{ width: 50, height: 50 }} source={Test} />
+            return <Image style={styles.scenery} source={Test} />
         case 4:
-            return <Image style={{ width: 50, height: 50 }} source={Test} />
+            return <Image style={styles.scenery}source={Test} />
         case 5:
-            return <Image style={{ width: 50, height: 50 }} source={Test} />
+            return <Image style={styles.scenery} source={Test} />
         case 6:
-            return <Image style={{ width: 50, height: 50 }} source={Test} />
+            return <Image style={styles.scenery} source={Test} />
     }
 }
 

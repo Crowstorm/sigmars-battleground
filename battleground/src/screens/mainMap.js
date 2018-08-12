@@ -1,15 +1,19 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import SquareGrid from "react-native-square-grid";
-
-import {renderEmptyMap} from './functions/mainMapLogic';
+import { renderEmptyMap } from './functions/mainMapLogic';
 
 class MainMapScreen extends React.Component {
 
     render() {
-        return(
-            renderEmptyMap(styles)
+        return (
+            <View style={styles.container}>
+                {renderEmptyMap(styles)}
+                <Icon1 name="sword-cross" size={30}>
+                    <Text style={}>Login with Facebook</Text>
+                </Icon1>
+            </View>
         )
     }
 }
@@ -20,7 +24,8 @@ const styles = StyleSheet.create({
         borderColor: "red",
         borderWidth: 1,
         alignItems: "center",
-        justifyContent: "center"
+        paddingTop: "5%"
+        //justifyContent: "center"
     },
     mapContainer: {
         borderColor: "blue",
@@ -44,6 +49,21 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         width: '33%',
         aspectRatio: 1,
+    },
+    terrain: {
+        width: 30,
+        height: 30,
+        position: "absolute",
+        zIndex: 2
+    },
+    scenery: {
+        width: 30,
+        height: 30,
+        position: "absolute",
+    },
+    swordIcon:{
+        height: 50,
+        width: 50
     }
 
 })
