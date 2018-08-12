@@ -10,8 +10,7 @@ class MainMapScreen extends React.Component {
         return (
             <View style={styles.container}>
                 {renderEmptyMap(styles)}
-                <Icon1 name="sword-cross" size={30}>
-                    <Text style={}>Login with Facebook</Text>
+                <Icon1 name="sword-cross" size={30} style={styles.swordIcon}>
                 </Icon1>
             </View>
         )
@@ -24,7 +23,8 @@ const styles = StyleSheet.create({
         borderColor: "red",
         borderWidth: 1,
         alignItems: "center",
-        paddingTop: "5%"
+        paddingTop: "5%",
+        flexDirection: "column"
         //justifyContent: "center"
     },
     mapContainer: {
@@ -62,8 +62,9 @@ const styles = StyleSheet.create({
         position: "absolute",
     },
     swordIcon:{
-        height: 50,
-        width: 50
+        position: "absolute",
+        alignSelf: 'flex-start',
+        paddingTop: "42%"
     }
 
 })
