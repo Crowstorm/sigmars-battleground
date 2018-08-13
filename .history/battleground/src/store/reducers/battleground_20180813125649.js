@@ -35,7 +35,7 @@ const reducer = (state = initialState, action) => {
             console.log('?')
             return{
                 ...state,
-                numberOfTerrains: action.value
+                numberOfTerrains: state.numberOfTerrains.concat(action.value)
             }
         }
    

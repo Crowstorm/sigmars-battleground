@@ -1,6 +1,4 @@
 const initialState = {
-    terrainIndex: [0, 1, 2, 3],
-    squareIndex: [0, 1, 2, 3, 4, 5, 6, 7, 8],
     terrainVisibility: true,
     sceneryVisibility: true,
     squareContent: [
@@ -32,10 +30,9 @@ const reducer = (state = initialState, action) => {
             }
         }
         case 'TERRAIN_AMOUNT':{
-            console.log('?')
             return{
                 ...state,
-                numberOfTerrains: action.value
+                numberOfTerrains: state.numberOfTerrains.concat(action.value)
             }
         }
    

@@ -25,10 +25,11 @@ class MainMapScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                <Text> gono </Text>
+                <Button title="Generate Map" onPress={this.handleMapGeneration} style={styles.generatorButton} />
                 <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1>
                 <Map {...this.props} />
                 <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2>
-                <Button title="Generate Map" onPress={this.handleMapGeneration} style={styles.generatorButton} />
 
 
             </View>
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
         paddingRight: "5%"
     },
     generatorButton: {
-        // position: "absolute",
+        position: "absolute",
     }
 
 })

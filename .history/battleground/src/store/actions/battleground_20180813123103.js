@@ -20,11 +20,8 @@ export const pushPickedSquares = (array) =>{
 }
 
 export const rollNumberOfTerrains = () =>{
-     let value = [];
-     for(let i = 0; i < 6; i++){
-        let diceRoll = doubleDiceRoll();
-        value.push(getNumberOfTerrains(diceRoll));
-     }
+    let diceRoll = doubleDiceRoll();
+    let value = getNumberOfTerrains(diceroll);
     return{
         type: 'TERRAIN_AMOUNT',
         value

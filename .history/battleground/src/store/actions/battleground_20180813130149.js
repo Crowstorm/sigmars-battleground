@@ -25,6 +25,7 @@ export const rollNumberOfTerrains = () =>{
         let diceRoll = doubleDiceRoll();
         value.push(getNumberOfTerrains(diceRoll));
      }
+    console.log('akcja')
     return{
         type: 'TERRAIN_AMOUNT',
         value

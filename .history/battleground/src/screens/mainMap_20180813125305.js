@@ -1,35 +1,36 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Button, StyleSheet } from 'react-native';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux'; 
 import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/Octicons';
 
-import { toggleTerrain, toggleScenery, pushPickedSquares, rollNumberOfTerrains } from '../store/actions/battleground';
+import {toggleTerrain, toggleScenery, pushPickedSquares,rollNumberOfTerrains} from '../store/actions/battleground';
 import { renderEmptyMap } from './functions/mainMapLogic';
 
 import Map from './components/map';
 
 class MainMapScreen extends React.Component {
 
-    onToggleTerrain = () => {
+    onToggleTerrain = () =>{
         this.props.toggleTerrain();
     }
-    onToggleScenery = () => {
+    onToggleScenery = () =>{
         this.props.toggleScenery();
     }
 
-    handleMapGeneration = () => {
+    handleMapGeneration = () =>{
         this.props.rollNumberOfTerrains();
     }
 
     render() {
         return (
             <View style={styles.container}>
+                {/* {renderEmptyMap(styles, this.props)} */}
                 <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1>
-                <Map {...this.props} />
+                <Map {...this.props}/> 
                 <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2>
-                <Button title="Generate Map" onPress={this.handleMapGeneration} style={styles.generatorButton} />
 
+                <Button title="Generate Map" onPress={this.handleMapGeneration} style={styles.generatorButton}/>
 
             </View>
         )
@@ -59,14 +60,14 @@ const styles = StyleSheet.create({
         paddingTop: "42%",
         paddingRight: "5%"
     },
-    generatorButton: {
-        // position: "absolute",
+    generatorButton:{
+        height: 100
     }
 
 })
 
-const mapDispatchToProps = dispatch => {
-    return {
+const mapDispatchToProps = dispatch =>{
+    return{
         toggleTerrain: () => dispatch(toggleTerrain()),
         toggleScenery: () => dispatch(toggleScenery()),
         rollNumberOfTerrains: () => dispatch(rollNumberOfTerrains()),

@@ -2,11 +2,13 @@ import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
 
+import {rollNumberOfTerrains} from '../../store/actions/battleground'
+
 class Map extends React.Component {
-    
-
     render() {
-
+        const terrainIndex = [0, 1, 2, 3];
+        const squareIndex = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        this.props.rollNumberOfTerrains();
 
         return (
             <View style={styles.mapContainer}>
