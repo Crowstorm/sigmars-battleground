@@ -19,8 +19,10 @@ class MainMapScreen extends React.Component {
     }
 
     handleMapGeneration = () => {
+        let test = this.props.battleground;
+        console.log({test})
         this.props.rollNumberOfTerrains();
-        this.props.pickSquares();
+        this.props.pickSquares(this.props.battleground);
     }
 
     render() {

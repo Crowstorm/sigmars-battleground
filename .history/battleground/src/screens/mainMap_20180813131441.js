@@ -20,11 +20,10 @@ class MainMapScreen extends React.Component {
 
     handleMapGeneration = () => {
         this.props.rollNumberOfTerrains();
-        this.props.pickSquares();
+        this.props.pickSquares(this.props);
     }
 
     render() {
-        console.log(this.props)
         return (
             <View style={styles.container}>
                 <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1>

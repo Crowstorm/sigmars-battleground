@@ -1,5 +1,3 @@
-import store from '../configureStore';
-
 export const toggleTerrain = () =>{
     return {
         type: 'TOGGLE_TERRAIN',
@@ -12,12 +10,11 @@ export const toggleScenery = () =>{
     }
 }
 
-export const pickSquares = () =>{
-    
+export const pickSquares = (props) =>{
     let value = [];
     for(let i = 0; i <6; i++){
-        let shuffled = shuffle(store.getState().battleground.squareIndex);
-        let selected = shuffled.slice(0, store.getState().battleground.numberOfTerrains[i]);
+        let shuffled = shuffle(props.battleground.squareIndex);
+        let selected = shuffled.slice(0, props.battleground.numberOfTerrains[i]);
         value.push(selected);
     }
     return{

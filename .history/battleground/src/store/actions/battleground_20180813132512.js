@@ -1,5 +1,3 @@
-import store from '../configureStore';
-
 export const toggleTerrain = () =>{
     return {
         type: 'TOGGLE_TERRAIN',
