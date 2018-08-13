@@ -7,13 +7,25 @@ import Mountain from '../../assets/terrain/peaks.png';
 import Tree from '../../assets/terrain/pine-tree.png';
 import Test from '../../assets/terrain/test.png';
 
+let smallSquareArray1 = [];
+let smallSquareArray2 = [];
+let smallSquareArray3 = [];
+let smallSquareArray4 = [];
+let smallSquareArray5 = [];
+let smallSquareArray6 = [];
+
 let smallSquareArray = [
     [], [], [], [], [], []
 ]
 
 export const renderEmptyMap = (styles, props) => {
     let mainSquareArray = [];
-    console.log({smallSquareArray})
+    // let smallSquareArray = [
+    //     [], [], [], [], [], []
+    // ]
+
+
+
 
     for (let i = 0; i < 6; i++) {
         //number of terrains
@@ -31,9 +43,9 @@ export const renderEmptyMap = (styles, props) => {
     }
 
     return (
-        <View style={styles.mapContainer}>
-            {mainSquareArray}
-        </View>
+            <View style={styles.mapContainer}>
+                {mainSquareArray}
+            </View>
     )
 };
 
@@ -49,12 +61,8 @@ const smallSquaresLoop = (index, array, noOfTerr, styles, props) => {
             let isPicked = isSquarePicked(selected, i);
             if (isPicked) {
                 let terrainIndex = pickTerrainIndex();
-                console.log(props.battleground.terrainVisibility);
-
-                let terrain = (props.battleground.terrainVisibility) ? getTerrain(styles, terrainIndex, props) : null
                 smallSquareArray[index].push(
-                    //  <View style={styles.smallSquare}>{getTerrain(styles, terrainIndex, props)}{getScenery(styles, props)}</View>
-                    <View style={styles.smallSquare}>{terrain}{getScenery(styles, props)}</View>
+                     <View style={styles.smallSquare}>{getTerrain(styles, terrainIndex, props)}{getScenery(styles, props)}</View>
                 )
             } else {
                 smallSquareArray[index].push(
@@ -88,15 +96,16 @@ const pickTerrainIndex = () => {
 }
 
 const getTerrain = (styles, index, props) => {
+    console.log({props})
     switch (index) {
         case 0:
-            return <Image style={styles.terrain} source={Barrel} />
+            return <Image style={ (props.battleground.terrainVisibility) ? styles.terrain : styles.hideTerrain} source={Barrel} />
         case 1:
-            return <Image style={styles.terrain}  source={Plot} />
+            return <Image style={ (props.battleground.terrainVisibility) ? styles.terrain : styles.hideTerrain} source={Plot} />
         case 2:
-            return <Image style={styles.terrain}  source={Mountain} />
+            return <Image style={ (props.battleground.terrainVisibility) ? styles.terrain : styles.hideTerrain} source={Mountain} />
         case 3:
-            return <Image style={styles.terrain}  source={Tree} />
+            return <Image style={ (props.battleground.terrainVisibility) ? styles.terrain : styles.hideTerrain} source={Tree} />
     }
 }
 
@@ -111,7 +120,7 @@ const getScenery = (styles) => {
         case 3:
             return <Image style={styles.scenery} source={Test} />
         case 4:
-            return <Image style={styles.scenery} source={Test} />
+            return <Image style={styles.scenery}source={Test} />
         case 5:
             return <Image style={styles.scenery} source={Test} />
         case 6:

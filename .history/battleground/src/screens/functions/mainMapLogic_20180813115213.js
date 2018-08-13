@@ -13,7 +13,6 @@ let smallSquareArray = [
 
 export const renderEmptyMap = (styles, props) => {
     let mainSquareArray = [];
-    console.log({smallSquareArray})
 
     for (let i = 0; i < 6; i++) {
         //number of terrains
@@ -49,8 +48,6 @@ const smallSquaresLoop = (index, array, noOfTerr, styles, props) => {
             let isPicked = isSquarePicked(selected, i);
             if (isPicked) {
                 let terrainIndex = pickTerrainIndex();
-                console.log(props.battleground.terrainVisibility);
-
                 let terrain = (props.battleground.terrainVisibility) ? getTerrain(styles, terrainIndex, props) : null
                 smallSquareArray[index].push(
                     //  <View style={styles.smallSquare}>{getTerrain(styles, terrainIndex, props)}{getScenery(styles, props)}</View>
@@ -88,6 +85,7 @@ const pickTerrainIndex = () => {
 }
 
 const getTerrain = (styles, index, props) => {
+    console.log(props.battleground.terrainVisibility);
     switch (index) {
         case 0:
             return <Image style={styles.terrain} source={Barrel} />
@@ -97,6 +95,15 @@ const getTerrain = (styles, index, props) => {
             return <Image style={styles.terrain}  source={Mountain} />
         case 3:
             return <Image style={styles.terrain}  source={Tree} />
+
+        // case 0:
+        //     return <Image style={styles.terrain} source={Barrel} />
+        // case 1:
+        //     return <Image style={(props.battleground.terrainVisibility) ? styles.terrain : styles.hideTerrain} source={Plot} />
+        // case 2:
+        //     return <Image style={(props.battleground.terrainVisibility) ? styles.terrain : styles.hideTerrain} source={Mountain} />
+        // case 3:
+        //     return <Image style={(props.battleground.terrainVisibility) ? styles.terrain : styles.hideTerrain} source={Tree} />
     }
 }
 

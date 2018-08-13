@@ -1,9 +1,6 @@
 const initialState = {
     terrainVisibility: true,
     sceneryVisibility: true,
-    squareContent: [
-        
-    ]
 }
 
 const reducer = (state = initialState, action) => {

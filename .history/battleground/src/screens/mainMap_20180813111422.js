@@ -4,10 +4,11 @@ import {connect} from 'react-redux';
 import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/Octicons';
 
-import {toggleTerrain, toggleScenery} from '../store/actions/battleground';
-import { renderEmptyMap } from './functions/mainMapLogic';
 
-import Map from './components/map';
+import {toggleTerrain, toggleScenery} from '../store/actions/battleground';
+
+
+import { renderEmptyMap } from './functions/mainMapLogic';
 
 class MainMapScreen extends React.Component {
 
@@ -21,10 +22,10 @@ class MainMapScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                {/* {renderEmptyMap(styles, this.props)} */}
+                {renderEmptyMap(styles, this.props)}
                 <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1>
-                <Map /> 
                 <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2>
+
             </View>
         )
     }
@@ -65,10 +66,11 @@ const styles = StyleSheet.create({
         aspectRatio: 1,
     },
     terrain: {
-        width: 30,
-        height: 30,
-        position: "absolute",
-        zIndex: 2,
+        // width: 30,
+        // height: 30,
+        // position: "absolute",
+        // zIndex: 2,
+        opacity: 0
     },
     hideTerrain: {
         opacity: 0

@@ -22,8 +22,8 @@ class MainMapScreen extends React.Component {
         return (
             <View style={styles.container}>
                 {/* {renderEmptyMap(styles, this.props)} */}
+                <Map />
                 <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1>
-                <Map /> 
                 <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2>
             </View>
         )

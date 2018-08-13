@@ -13,7 +13,6 @@ let smallSquareArray = [
 
 export const renderEmptyMap = (styles, props) => {
     let mainSquareArray = [];
-    console.log({smallSquareArray})
 
     for (let i = 0; i < 6; i++) {
         //number of terrains
@@ -97,6 +96,15 @@ const getTerrain = (styles, index, props) => {
             return <Image style={styles.terrain}  source={Mountain} />
         case 3:
             return <Image style={styles.terrain}  source={Tree} />
+
+        // case 0:
+        //     return <Image style={styles.terrain} source={Barrel} />
+        // case 1:
+        //     return <Image style={(props.battleground.terrainVisibility) ? styles.terrain : styles.hideTerrain} source={Plot} />
+        // case 2:
+        //     return <Image style={(props.battleground.terrainVisibility) ? styles.terrain : styles.hideTerrain} source={Mountain} />
+        // case 3:
+        //     return <Image style={(props.battleground.terrainVisibility) ? styles.terrain : styles.hideTerrain} source={Tree} />
     }
 }
 

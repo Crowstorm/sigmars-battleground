@@ -1,9 +1,6 @@
 const initialState = {
     terrainVisibility: true,
     sceneryVisibility: true,
-    squareContent: [
-        
-    ]
 }
 
 const reducer = (state = initialState, action) => {
@@ -17,7 +14,7 @@ const reducer = (state = initialState, action) => {
         case 'TOGGLE_SCENERY': {
             return{
                  ...state,
-                 sceneryVisibility: !state.sceneryVisibility
+
             }
         }
    
