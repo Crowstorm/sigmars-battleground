@@ -17,10 +17,6 @@ export const pickSquares = () =>{
         let value = [];
         for(let i = 0; i <6; i++){
             let shuffled = shuffle(getState().battleground.squareIndex);
-            for(let j =0; j < getState().battleground.numberOfTerrains[i]; j++){
-                //wybierz square
-                //stworz pusty array, 0: wybrany square, 1: teren 2: sceneria
-            }
             let selected = shuffled.slice(0, getState().battleground.numberOfTerrains[i]);
             console.log({selected});
             value.push(selected);

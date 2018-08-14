@@ -3,7 +3,7 @@ const initialState = {
     squareIndex: [0, 1, 2, 3, 4, 5, 6, 7, 8],
     terrainVisibility: true,
     sceneryVisibility: true,
-    pickedSquares: [
+    squareContent: [
 
     ],
     numberOfTerrains:[
@@ -28,7 +28,7 @@ const reducer = (state = initialState, action) => {
         case 'PICKED_SQUARES':{
             return{
                 ...state,
-                pickedSquares: action.value
+                squareContent: action.value
             }
         }
         case 'TERRAIN_AMOUNT':{
