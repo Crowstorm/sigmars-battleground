@@ -17,13 +17,21 @@ export const pickSquares = () =>{
         let value = [];
         for(let i = 0; i <6; i++){
             let shuffled = shuffle(getState().battleground.squareIndex);
-            for(let j =0; j < getState().battleground.numberOfTerrains[i]; j++){
-                //wybierz square
-                //stworz pusty array, 0: wybrany square, 1: teren 2: sceneria
-            }
             let selected = shuffled.slice(0, getState().battleground.numberOfTerrains[i]);
-            console.log({selected});
-            value.push(selected);
+            let terrainInfo = [];
+            for(let j =0; j < getState().battleground.numberOfTerrains[i]; j++){
+                //0:square index, 1: terrain 2: scenery
+                let temp = [];
+                //get square
+                temp.push(selected[j])
+                //roll for terrain
+                temp.push(pickTerrainIndex());
+                //roll for scenery
+                temp.push(singleDiceRoll());
+                //push to terrainInfo
+                terrainInfo.push(temp)
+            }
+            value.push(terrainInfo);
         }
         dispatch({
             type: 'PICKED_SQUARES',
@@ -44,8 +52,6 @@ export const rollNumberOfTerrains = () =>{
         value
     }
 }
-
-
 
 const singleDiceRoll = () => {
     return Math.floor(Math.random() * 6 + 1);
