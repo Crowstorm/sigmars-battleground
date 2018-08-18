@@ -15,9 +15,10 @@ class Map extends React.Component {
     }
 
     getTerrain = (index) => {
-        console.log({index})
+        console.log({ index })
         switch (index) {
             case 0:
+                console.log('kejskik')
                 return <Image style={styles.terrain} source={Barrel} />
             case 1:
                 return <Image style={styles.terrain} source={Plot} />
@@ -29,7 +30,7 @@ class Map extends React.Component {
     }
 
     getScenery = (index) => {
-        
+        // console.log({ index })
         switch (index) {
             case 1:
                 return <Image style={styles.scenery} source={Test} />
@@ -52,10 +53,10 @@ class Map extends React.Component {
             //for loop length valtable
 
             //check if its the proper small square
-            if (j === valueTable[0]) {
+            if (valueTable.length !==0 && j === valueTable[0][0]) {
                 // roll scenery
                 if (this.props.battleground.sceneryVisibility) {
-                    this.getScenery(valueTable[2]);
+                   return this.getScenery(valueTable[0][2]);
                 }
             }
         }
@@ -63,26 +64,40 @@ class Map extends React.Component {
 
     renderTerrain = (i, j) => {
         if (this.props.battleground.pickedSquares.length !== 0 && this.props.battleground.numberOfTerrains.length !== 0) {
-            //console.log('squares', this.props.battleground.pickedSquares.length, 'ter',this.props.battleground.numberOfTerrains.length )
             let valueTable = this.props.battleground.pickedSquares[i];
-           // console.log(valueTable);
             //check if its the proper small square
-            console.log({j}, valueTable[0][0])
-            if (j === valueTable[0][0]) {
+
+           //pierdolnij mapa
+            if (valueTable.length !==0 && j === valueTable[0][0]) {
                 console.log('roll please')
                 // roll terrain
                 if (this.props.battleground.terrainVisibility) {
                     console.log('pls', valueTable[0][1])
-                    this.getTerrain(valueTable[0][1]);
+                   return this.getTerrain(valueTable[0][1]);
                 }
             }
         }
+
+       // return <Image style={styles.terrain} source={Mountain} />
+    }
+
+    renderEmptyGrid() {
+        console.log('empty')
+        let mainSquares = [0, 1, 2, 3, 4, 5];
+        let subSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        return _.map(mainSquares, (square, i) => {
+            return <View style={styles.mainSquare} key={`main${i}`}>
+                {_.map(subSquares, (smallSquare, j) => {
+                    return <View style={styles.smallSquare} key={`sub${i}${j}`}></View>
+                })}
+            </View>
+        })
     }
 
     renderGrid() {
+        console.log('fill')
         let mainSquares = [0, 1, 2, 3, 4, 5];
         let subSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-
         return _.map(mainSquares, (square, i) => {
             return <View style={styles.mainSquare} key={`main${i}`}>
                 {_.map(subSquares, (smallSquare, j) => {
@@ -91,7 +106,6 @@ class Map extends React.Component {
             </View>
         })
     }
-
     // renderSquareContent = () => {
     //     if(this.props.battleground.terrainVisibility){
     //         return (
@@ -106,7 +120,7 @@ class Map extends React.Component {
 
     render() {
         // let squareContent = this.renderSquareContent();
-        let content = this.renderGrid();
+        let content = (this.props.battleground.numberOfTerrains.length > 0) ? this.renderGrid() : this.renderEmptyGrid();
         return (
             <View style={styles.mapContainer}>
                 {content}
