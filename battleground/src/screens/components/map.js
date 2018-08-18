@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
+import _ from 'lodash';
 
 import Barrel from '../../assets/terrain/barrel.png';
 import Plot from '../../assets/terrain/palisade.png';
@@ -26,41 +27,91 @@ class Map extends React.Component {
         }
     }
 
+    getScenery = (index) => {
+        switch (index) {
+            case 1:
+                return <Image style={styles.scenery} source={Test} />
+            case 2:
+                return <Image style={styles.scenery} source={Test} />
+            case 3:
+                return <Image style={styles.scenery} source={Test} />
+            case 4:
+                return <Image style={styles.scenery} source={Test} />
+            case 5:
+                return <Image style={styles.scenery} source={Test} />
+            case 6:
+                return <Image style={styles.scenery} source={Test} />
+        }
+    }
+
+    renderGrid() {
+        let mainSquares = [0, 1, 2, 3, 4, 5];
+        let subSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+        return _.map(mainSquares, (square, i) => {
+            return <View style={styles.mainSquare} key={`main${i}`}>
+                {_.map(subSquares, (smallSquare, j) =>{
+                    return <View style={styles.smallSquare} key={`sub${i}${j}`}></View>
+                })}
+            </View>
+        })
+
+        // return _.map(mainSquares, row => {
+        //     return <div key={`row${row[0].y}`} className="row" style={{ margin: 0 }}> {_.map(row, cell => {
+        //         return <div key={cell.x + '.' + cell.y} id={'d' + cell.x + '_' + cell.y} style={{ height: 32, width: 32, boxSizing: 'border-box' }}> {/*x: {cell.x}, y: {cell.y} */} {this.renderPosition(cell)} </div>
+        //     })
+        //     } </div>
+        // })
+    }
+
+    renderSquareContent = () => {
+        return (
+            <View>
+
+            </View>
+        )
+    }
+
     render() {
-
-
+        let squareContent = this.renderSquareContent();
+        let content = this.renderGrid();
         return (
             <View style={styles.mapContainer}>
-                <View style={styles.mainSquare}>
-                    <View style={styles.smallSquare}></View>
-                    <View style={styles.smallSquare}></View>
-                    <View style={styles.smallSquare}></View>
-                    <View style={styles.smallSquare}></View>
-                    <View style={styles.smallSquare}></View>
-                    <View style={styles.smallSquare}></View>
-                    <View style={styles.smallSquare}></View>
-                    <View style={styles.smallSquare}></View>
-                    <View style={styles.smallSquare}></View>
-                </View>
-                <View style={styles.mainSquare}>
-
-                </View>
-                <View style={styles.mainSquare}>
-
-                </View>
-                <View style={styles.mainSquare}>
-
-                </View>
-                <View style={styles.mainSquare}>
-
-                </View>
-                <View style={styles.mainSquare}>
-
-                </View>
+                {content}
             </View>
         )
     }
 }
+
+
+
+// {/* <View style={styles.mainSquare}>
+// <View style={styles.smallSquare}>{squareContent}</View>
+// <View style={styles.smallSquare}>{squareContent}</View>
+// <View style={styles.smallSquare}>{squareContent}</View>
+// <View style={styles.smallSquare}>{squareContent}</View>
+// <View style={styles.smallSquare}>{squareContent}</View>
+// <View style={styles.smallSquare}>{squareContent}</View>
+// <View style={styles.smallSquare}>{squareContent}</View>
+// <View style={styles.smallSquare}>{squareContent}</View>
+// <View style={styles.smallSquare}>{squareContent}</View>
+
+// </View>
+// <View style={styles.mainSquare}>
+
+// </View>
+// <View style={styles.mainSquare}>
+
+// </View>
+// <View style={styles.mainSquare}>
+
+// </View>
+// <View style={styles.mainSquare}>
+
+// </View>
+// <View style={styles.mainSquare}> */}
+
+// </View>
 
 const styles = StyleSheet.create({
     mapContainer: {
