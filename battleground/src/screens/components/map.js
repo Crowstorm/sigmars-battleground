@@ -15,6 +15,7 @@ class Map extends React.Component {
     }
 
     getTerrain = (index) => {
+        console.log({index})
         switch (index) {
             case 0:
                 return <Image style={styles.terrain} source={Barrel} />
@@ -28,6 +29,7 @@ class Map extends React.Component {
     }
 
     getScenery = (index) => {
+        
         switch (index) {
             case 1:
                 return <Image style={styles.scenery} source={Test} />
@@ -44,36 +46,66 @@ class Map extends React.Component {
         }
     }
 
+    renderScenery = (i, j) => {
+        if (this.props.battleground.pickedSquares.length !== 0 && this.props.battleground.numberOfTerrains.length !== 0) {
+            let valueTable = this.props.battleground.pickedSquares[i];
+            //for loop length valtable
+
+            //check if its the proper small square
+            if (j === valueTable[0]) {
+                // roll scenery
+                if (this.props.battleground.sceneryVisibility) {
+                    this.getScenery(valueTable[2]);
+                }
+            }
+        }
+    }
+
+    renderTerrain = (i, j) => {
+        if (this.props.battleground.pickedSquares.length !== 0 && this.props.battleground.numberOfTerrains.length !== 0) {
+            //console.log('squares', this.props.battleground.pickedSquares.length, 'ter',this.props.battleground.numberOfTerrains.length )
+            let valueTable = this.props.battleground.pickedSquares[i];
+           // console.log(valueTable);
+            //check if its the proper small square
+            console.log({j}, valueTable[0][0])
+            if (j === valueTable[0][0]) {
+                console.log('roll please')
+                // roll terrain
+                if (this.props.battleground.terrainVisibility) {
+                    console.log('pls', valueTable[0][1])
+                    this.getTerrain(valueTable[0][1]);
+                }
+            }
+        }
+    }
+
     renderGrid() {
         let mainSquares = [0, 1, 2, 3, 4, 5];
         let subSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
         return _.map(mainSquares, (square, i) => {
             return <View style={styles.mainSquare} key={`main${i}`}>
-                {_.map(subSquares, (smallSquare, j) =>{
-                    return <View style={styles.smallSquare} key={`sub${i}${j}`}></View>
+                {_.map(subSquares, (smallSquare, j) => {
+                    return <View style={styles.smallSquare} key={`sub${i}${j}`}>{this.renderTerrain(i, j)}{this.renderScenery(i, j)}</View>
                 })}
             </View>
         })
-
-        // return _.map(mainSquares, row => {
-        //     return <div key={`row${row[0].y}`} className="row" style={{ margin: 0 }}> {_.map(row, cell => {
-        //         return <div key={cell.x + '.' + cell.y} id={'d' + cell.x + '_' + cell.y} style={{ height: 32, width: 32, boxSizing: 'border-box' }}> {/*x: {cell.x}, y: {cell.y} */} {this.renderPosition(cell)} </div>
-        //     })
-        //     } </div>
-        // })
     }
 
-    renderSquareContent = () => {
-        return (
-            <View>
-
-            </View>
-        )
-    }
+    // renderSquareContent = () => {
+    //     if(this.props.battleground.terrainVisibility){
+    //         return (
+    //             <Image style={styles.terrain} source={Barrel} />
+    //         )
+    //     } else {
+    //         return (
+    //                 <Text>test</Text>
+    //         )
+    //     }
+    // }
 
     render() {
-        let squareContent = this.renderSquareContent();
+        // let squareContent = this.renderSquareContent();
         let content = this.renderGrid();
         return (
             <View style={styles.mapContainer}>
