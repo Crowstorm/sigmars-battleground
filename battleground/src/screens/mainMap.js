@@ -31,10 +31,17 @@ class MainMapScreen extends React.Component {
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
                 {/* <View style={styles.container}> */}
-                    <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1>
-                    <Map {...this.props} />
-                    <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2>
-                    <Button title="Generate Map" onPress={this.handleMapGeneration} style={styles.generatorButton} />
+                <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1>
+                <Map {...this.props} />
+                <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2>
+                {/* <Button title="Generate Map" onPress={this.handleMapGeneration} style={styles.generatorButton} /> */}
+                <TouchableOpacity style={styles.generatorButton} onPress={this.handleMapGeneration} >
+                    <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={{borderRadius: 10}}>
+                        <View>
+                            <Text style={styles.generatorButtonText}>Generate Map</Text>
+                        </View>
+                    </LinearGradient>
+                </TouchableOpacity>
 
 
                 {/* </View> */}
@@ -68,6 +75,16 @@ const styles = StyleSheet.create({
     },
     generatorButton: {
         // position: "absolute",
+        borderColor: "gold",
+       // backgroundColor: "black",
+        borderWidth: 2,
+        borderRadius: 10
+    },
+    generatorButtonText: {
+        color: "gold",
+        fontWeight: "bold",
+        fontSize: 16,
+        padding: 10
     }
 
 })
