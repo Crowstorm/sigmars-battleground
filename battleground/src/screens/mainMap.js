@@ -1,11 +1,15 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Button, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Button, Image, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 
-
 import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/Octicons';
+
+import TerrainActive from '../assets/buttons/terrainActive.png';
+import Terrain from '../assets/buttons/terrain.png';
+import SceneryActive from '../assets/buttons/sceneryActive.png';
+import Scenery from '../assets/buttons/scenery.png';
 
 import { toggleTerrain, toggleScenery, pushPickedSquares, rollNumberOfTerrains, pickSquares } from '../store/actions/battleground';
 import { renderEmptyMap } from './functions/mainMapLogic';
@@ -15,8 +19,9 @@ import Map from './components/map';
 class MainMapScreen extends React.Component {
     static navigatorStyle = {
         navBarTextColor: '#AB7A30',
-        drawUnderNavBar: true,
-        navBarTranslucent: true
+        navBarTranslucent: true,
+        navBarBackgroundColor: 'black',
+        tabBarBackgroundColor: 'black'
     };
 
     onToggleTerrain = () => {
@@ -35,11 +40,17 @@ class MainMapScreen extends React.Component {
         console.log(this.props)
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
-                {/* <View style={styles.container}> */}
-                <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1>
+                {/* <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1> */}
+                <TouchableOpacity style={styles.terrainIconContainer} onPress={this.onToggleTerrain}>
+                    <Image source={TerrainActive} style={styles.terrainIcon}/>
+                    {/* <Text> Toggle Terrain </Text> */}
+                </TouchableOpacity>
                 <Map {...this.props} />
-                <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2>
-                {/* <Button title="Generate Map" onPress={this.handleMapGeneration} style={styles.generatorButton} /> */}
+                {/* <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2> */}
+                <TouchableOpacity style={styles.sceneryIconContainer} onPress={this.onToggleScenery}>
+                    <Image source={SceneryActive} style={styles.sceneryIcon}/>
+                    {/* <Text> Toggle Terrain </Text> */}
+                </TouchableOpacity>
                 <TouchableOpacity style={styles.generatorButton} onPress={this.handleMapGeneration} >
                     <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={{borderRadius: 10}}>
                         <View>
@@ -47,9 +58,6 @@ class MainMapScreen extends React.Component {
                         </View>
                     </LinearGradient>
                 </TouchableOpacity>
-
-
-                {/* </View> */}
             </LinearGradient>
         )
     }
@@ -65,23 +73,30 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         position: 'relative'
         //justifyContent: "center"
-    },
-    terrainIcon: {
+    },    
+    terrainIconContainer: {
         position: "absolute",
-        alignSelf: 'flex-start',
-        paddingTop: "42%",
-        paddingLeft: "5%"
+       alignSelf: 'flex-start',
+       paddingTop: "150%",
+       paddingLeft: "17%",
+      flex: 1
+   },
+    terrainIcon: {
+        height: 40,
+        width: 40
     },
-    sceneryIcon: {
+    sceneryIconContainer: {
         position: "absolute",
         alignSelf: 'flex-end',
-        paddingTop: "42%",
+        paddingTop: "265%",
         paddingRight: "5%"
     },
+    sceneryIcon: {
+        height: 40,
+        width: 40
+    },
     generatorButton: {
-        // position: "absolute",
         borderColor: "#AB7A30",
-       // backgroundColor: "black",
         borderWidth: 2,
         borderRadius: 10
     },

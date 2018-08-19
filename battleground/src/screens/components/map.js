@@ -121,8 +121,10 @@ const styles = StyleSheet.create({
         aspectRatio: 2 / 3,
     },
     mainSquare: {
-         borderColor: "#AB7A30",
-        borderWidth: 1,
+        borderColor: "#AB7A30",
+        borderTopWidth: 1,
+        borderRightWidth: 1,
+        borderLeftWidth: 1,
         width: '50%',
         aspectRatio: 1,
         flexDirection: 'row',

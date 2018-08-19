@@ -7,8 +7,8 @@ import IconFoundation from 'react-native-vector-icons/Foundation';
 
 const startTabs = () => {
     Promise.all([
-         IconMaterialCommunityIcons.getImageSource("map-legend", 30), // 0 map
-         IconFoundation.getImageSource("trees", 30) //1 tree
+        IconMaterialCommunityIcons.getImageSource("map-legend", 30), // 0 map
+        IconFoundation.getImageSource("trees", 30) //1 tree
     ]).then(sources => {
         Navigation.startTabBasedApp({
             tabs: [
@@ -24,7 +24,13 @@ const startTabs = () => {
                     title: "Terrain",
                     icon: sources[1]
                 },
-            ]
+            ],
+            tabsStyle: {
+                tabBarSelectedButtonColor: "#AB7A30",
+            },
+            appStyle: {
+                tabBarSelectedButtonColor: "#AB7A30",
+            }
         })
     });
 
