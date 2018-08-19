@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
        alignSelf: 'flex-start',
        paddingTop: "150%",
        paddingLeft: "17%",
-      flex: 1
+    //   flex: 1
    },
     terrainIcon: {
         height: 40,
@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
     generatorButton: {
         borderColor: "#AB7A30",
         borderWidth: 2,
-        borderRadius: 10
+        borderRadius: 10,
+        marginTop: 15
     },
     generatorButtonText: {
         color: "#AB7A30",
