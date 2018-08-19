@@ -13,6 +13,11 @@ import { renderEmptyMap } from './functions/mainMapLogic';
 import Map from './components/map';
 
 class MainMapScreen extends React.Component {
+    static navigatorStyle = {
+        navBarTextColor: '#AB7A30',
+        drawUnderNavBar: true,
+        navBarTranslucent: true
+    };
 
     onToggleTerrain = () => {
         this.props.toggleTerrain();
@@ -75,13 +80,13 @@ const styles = StyleSheet.create({
     },
     generatorButton: {
         // position: "absolute",
-        borderColor: "gold",
+        borderColor: "#AB7A30",
        // backgroundColor: "black",
         borderWidth: 2,
         borderRadius: 10
     },
     generatorButtonText: {
-        color: "gold",
+        color: "#AB7A30",
         fontWeight: "bold",
         fontSize: 16,
         padding: 10

@@ -112,7 +112,7 @@ class Map extends React.Component {
 
 const styles = StyleSheet.create({
     mapContainer: {
-        borderColor: "blue",
+        borderColor: "#AB7A30",
         borderWidth: 1,
         width: "80%",
         height: "70%",
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
         aspectRatio: 2 / 3,
     },
     mainSquare: {
-        // borderColor: "green",
+         borderColor: "#AB7A30",
         borderWidth: 1,
         width: '50%',
         aspectRatio: 1,
