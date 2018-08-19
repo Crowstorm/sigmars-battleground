@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import _ from 'lodash';
 
 import Barrel from '../../assets/terrain/barrel.png';
-import Plot from '../../assets/terrain/palisade.png';
+import Plot from '../../assets/terrain/palisade2.png';
 import Mountain from '../../assets/terrain/peaks.png';
 import Tree from '../../assets/terrain/pine-tree.png';
 import Test from '../../assets/terrain/test.png';
@@ -129,36 +129,6 @@ class Map extends React.Component {
     }
 }
 
-
-
-// {/* <View style={styles.mainSquare}>
-// <View style={styles.smallSquare}>{squareContent}</View>
-// <View style={styles.smallSquare}>{squareContent}</View>
-// <View style={styles.smallSquare}>{squareContent}</View>
-// <View style={styles.smallSquare}>{squareContent}</View>
-// <View style={styles.smallSquare}>{squareContent}</View>
-// <View style={styles.smallSquare}>{squareContent}</View>
-// <View style={styles.smallSquare}>{squareContent}</View>
-// <View style={styles.smallSquare}>{squareContent}</View>
-// <View style={styles.smallSquare}>{squareContent}</View>
-
-// </View>
-// <View style={styles.mainSquare}>
-
-// </View>
-// <View style={styles.mainSquare}>
-
-// </View>
-// <View style={styles.mainSquare}>
-
-// </View>
-// <View style={styles.mainSquare}>
-
-// </View>
-// <View style={styles.mainSquare}> */}
-
-// </View>
-
 const styles = StyleSheet.create({
     mapContainer: {
         borderColor: "blue",
@@ -170,7 +140,7 @@ const styles = StyleSheet.create({
         aspectRatio: 2 / 3,
     },
     mainSquare: {
-        borderColor: "green",
+       // borderColor: "green",
         borderWidth: 1,
         width: '50%',
         aspectRatio: 1,
@@ -178,7 +148,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
     },
     smallSquare: {
-        borderColor: "pink",
+     //   borderColor: "pink",
         borderWidth: 1,
         width: '33%',
         aspectRatio: 1,

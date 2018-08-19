@@ -81,6 +81,7 @@ MERGED from [battleground:react-native-navigation:unspecified] D:\Repozytoria\ba
 		ADDED from D:\Repozytoria\battleground\battleground\android\app\src\main\AndroidManifest.xml:23:17-81
 uses-sdk
 INJECTED from D:\Repozytoria\battleground\battleground\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [battleground:react-native-linear-gradient:unspecified] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-linear-gradient\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [battleground:react-native-vector-icons:unspecified] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-vector-icons\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [battleground:react-native-navigation:unspecified] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-navigation\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.55.4] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\AndroidManifest.xml:7:5-9:41

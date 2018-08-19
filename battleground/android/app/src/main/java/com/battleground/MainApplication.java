@@ -3,6 +3,7 @@ package com.battleground;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -14,6 +15,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.oblador.vectoricons.VectorIconsPackage;
+
+import com.BV.LinearGradient.LinearGradientPackage; // <--- This!
 
 public class MainApplication extends NavigationApplication  {
    @Override
@@ -27,7 +30,8 @@ public class MainApplication extends NavigationApplication  {
          // No need to add RnnPackage and MainReactPackage
          return Arrays.<ReactPackage>asList(
              // eg. new VectorIconsPackage()
-             new VectorIconsPackage()
+             new VectorIconsPackage(),
+             new LinearGradientPackage() // <---- and This!
          );
      }
 
@@ -50,7 +54,7 @@ public class MainApplication extends NavigationApplication  {
   //   @Override
   //   protected List<ReactPackage> getPackages() {
   //     return Arrays.<ReactPackage>asList(
-  //         new MainReactPackage()
+  //         new MainReactPackage(),
   //     );
   //   }
 

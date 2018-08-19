@@ -1,6 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Button, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
+import LinearGradient from 'react-native-linear-gradient';
+
+
 import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/Octicons';
 
@@ -26,14 +29,16 @@ class MainMapScreen extends React.Component {
     render() {
         console.log(this.props)
         return (
-            <View style={styles.container}>
-                <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1>
-                <Map {...this.props} />
-                <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2>
-                <Button title="Generate Map" onPress={this.handleMapGeneration} style={styles.generatorButton} />
+            <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
+                {/* <View style={styles.container}> */}
+                    <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1>
+                    <Map {...this.props} />
+                    <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2>
+                    <Button title="Generate Map" onPress={this.handleMapGeneration} style={styles.generatorButton} />
 
 
-            </View>
+                {/* </View> */}
+            </LinearGradient>
         )
     }
 }
@@ -41,6 +46,7 @@ class MainMapScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: "#1b2936",
         borderColor: "red",
         borderWidth: 1,
         alignItems: "center",
