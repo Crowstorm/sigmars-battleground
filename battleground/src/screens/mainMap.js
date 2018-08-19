@@ -46,8 +46,7 @@ class MainMapScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#1b2936",
-        borderColor: "red",
+        //backgroundColor: "#1b2936",
         borderWidth: 1,
         alignItems: "center",
         paddingTop: "5%",

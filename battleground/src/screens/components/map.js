@@ -3,22 +3,18 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import _ from 'lodash';
 
 import Barrel from '../../assets/terrain/barrel.png';
-import Plot from '../../assets/terrain/palisade2.png';
+import Plot from '../../assets/terrain/palisade.png';
 import Mountain from '../../assets/terrain/peaks.png';
 import Tree from '../../assets/terrain/pine-tree.png';
+import Tent from '../../assets/terrain/tent.png';
+
 import Test from '../../assets/terrain/test.png';
 
 
 class Map extends React.Component {
-    pickTerrainIndex = () => {
-        return Math.floor(Math.random() * 4);
-    }
-
     getTerrain = (index) => {
-        console.log({ index })
         switch (index) {
             case 0:
-                console.log('kejskik')
                 return <Image style={styles.terrain} source={Barrel} />
             case 1:
                 return <Image style={styles.terrain} source={Plot} />
@@ -26,11 +22,12 @@ class Map extends React.Component {
                 return <Image style={styles.terrain} source={Mountain} />
             case 3:
                 return <Image style={styles.terrain} source={Tree} />
+            case 4:
+                return <Image style={styles.terrain} source={Tent} />
         }
     }
 
     getScenery = (index) => {
-        // console.log({ index })
         switch (index) {
             case 1:
                 return <Image style={styles.scenery} source={Test} />
@@ -53,10 +50,10 @@ class Map extends React.Component {
             //for loop length valtable
 
             //check if its the proper small square
-            if (valueTable.length !==0 && j === valueTable[0][0]) {
+            if (valueTable.length !== 0 && j === valueTable[0][0]) {
                 // roll scenery
                 if (this.props.battleground.sceneryVisibility) {
-                   return this.getScenery(valueTable[0][2]);
+                    return this.getScenery(valueTable[0][2]);
                 }
             }
         }
@@ -67,18 +64,14 @@ class Map extends React.Component {
             let valueTable = this.props.battleground.pickedSquares[i];
             //check if its the proper small square
 
-           //pierdolnij mapa
-            if (valueTable.length !==0 && j === valueTable[0][0]) {
-                console.log('roll please')
+            //pierdolnij mapa
+            if (valueTable.length !== 0 && j === valueTable[0][0]) {
                 // roll terrain
                 if (this.props.battleground.terrainVisibility) {
-                    console.log('pls', valueTable[0][1])
-                   return this.getTerrain(valueTable[0][1]);
+                    return this.getTerrain(valueTable[0][1]);
                 }
             }
         }
-
-       // return <Image style={styles.terrain} source={Mountain} />
     }
 
     renderEmptyGrid() {
@@ -106,20 +99,8 @@ class Map extends React.Component {
             </View>
         })
     }
-    // renderSquareContent = () => {
-    //     if(this.props.battleground.terrainVisibility){
-    //         return (
-    //             <Image style={styles.terrain} source={Barrel} />
-    //         )
-    //     } else {
-    //         return (
-    //                 <Text>test</Text>
-    //         )
-    //     }
-    // }
 
     render() {
-        // let squareContent = this.renderSquareContent();
         let content = (this.props.battleground.numberOfTerrains.length > 0) ? this.renderGrid() : this.renderEmptyGrid();
         return (
             <View style={styles.mapContainer}>
@@ -140,7 +121,7 @@ const styles = StyleSheet.create({
         aspectRatio: 2 / 3,
     },
     mainSquare: {
-       // borderColor: "green",
+        // borderColor: "green",
         borderWidth: 1,
         width: '50%',
         aspectRatio: 1,
@@ -148,8 +129,8 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
     },
     smallSquare: {
-     //   borderColor: "pink",
-        borderWidth: 1,
+        //   borderColor: "pink",
+        // borderWidth: 1,
         width: '33%',
         aspectRatio: 1,
     },

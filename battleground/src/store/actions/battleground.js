@@ -58,7 +58,7 @@ const singleDiceRoll = () => {
 }
 
 const pickTerrainIndex = () => {
-    return Math.floor(Math.random() * 4);
+    return Math.floor(Math.random() * 5);
 }
 
 const doubleDiceRoll = () => {
