@@ -8,7 +8,8 @@ const initialState = {
     ],
     numberOfTerrains:[
 
-    ]
+    ],
+    indexHelper: 0
 }
 
 const reducer = (state = initialState, action) => {
@@ -35,6 +36,18 @@ const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 numberOfTerrains: action.value
+            }
+        }
+        case 'INCREMENT_INDEX_HELPER':{
+            return{
+                ...state,
+                indexHelper: state.indexHelper+1
+            }
+        }
+        case 'ZERO_INDEX_HELPER':{
+            return{
+                ...state,
+                indexHelper: 0
             }
         }
    

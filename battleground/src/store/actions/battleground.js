@@ -12,6 +12,18 @@ export const toggleScenery = () =>{
     }
 }
 
+export const incrementHelperIndex = () =>{
+    return{
+        type: 'INCREMENT_INDEX_HELPER',
+    }
+}
+
+export const zeroHelperIndex = () =>{
+    return{
+        type: 'ZERO_INDEX_HELPER',
+    }
+}
+
 export const pickSquares = () =>{
     return function (dispatch, getState) {
         let value = [];
@@ -28,6 +40,8 @@ export const pickSquares = () =>{
                 temp.push(pickTerrainIndex());
                 //roll for scenery
                 temp.push(singleDiceRoll());
+                //push flags for inserting terrain and scenery
+                temp.push(false, false)
                 //push to terrainInfo
                 terrainInfo.push(temp)
             }

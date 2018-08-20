@@ -1,6 +1,7 @@
 import { Navigation } from 'react-native-navigation';
 import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconFoundation from 'react-native-vector-icons/Foundation';
+import IconFontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 
 
@@ -8,7 +9,8 @@ import IconFoundation from 'react-native-vector-icons/Foundation';
 const startTabs = () => {
     Promise.all([
         IconMaterialCommunityIcons.getImageSource("map-legend", 30), // 0 map
-        IconFoundation.getImageSource("trees", 30) //1 tree
+        IconFoundation.getImageSource("trees", 30), //1 tree
+        IconFontAwesome5.getImageSource("dice", 30), //2 dice
     ]).then(sources => {
         Navigation.startTabBasedApp({
             tabs: [
@@ -16,13 +18,13 @@ const startTabs = () => {
                     screen: "battleground.MainMapScreen",
                     label: "Battleground",
                     title: "Battleground",
-                    icon: sources[0]
+                    icon: sources[1]
                 },
                 {
-                    screen: "battleground.TerrainScreen",
-                    label: "Terrain",
-                    title: "Terrain",
-                    icon: sources[1]
+                    screen: "battleground.DiceScreen",
+                    label: "Dice",
+                    title: "Dice",
+                    icon: sources[2]
                 },
             ],
             tabsStyle: {

@@ -62,10 +62,13 @@ class Map extends React.Component {
     renderTerrain = (i, j) => {
         if (this.props.battleground.pickedSquares.length !== 0 && this.props.battleground.numberOfTerrains.length !== 0) {
             let valueTable = this.props.battleground.pickedSquares[i];
+            //console.log({ valueTable })
             //check if its the proper small square
 
             //pierdolnij mapa
             if (valueTable.length !== 0 && j === valueTable[0][0]) {
+                //set flags
+                
                 // roll terrain
                 if (this.props.battleground.terrainVisibility) {
                     return this.getTerrain(valueTable[0][1]);
@@ -75,7 +78,6 @@ class Map extends React.Component {
     }
 
     renderEmptyGrid() {
-        console.log('empty')
         let mainSquares = [0, 1, 2, 3, 4, 5];
         let subSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
         return _.map(mainSquares, (square, i) => {
@@ -88,19 +90,21 @@ class Map extends React.Component {
     }
 
     renderGrid() {
-        console.log('fill')
         let mainSquares = [0, 1, 2, 3, 4, 5];
         let subSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
         return _.map(mainSquares, (square, i) => {
             return <View style={styles.mainSquare} key={`main${i}`}>
                 {_.map(subSquares, (smallSquare, j) => {
+                    let test = this.props.battleground.pickedSquares.length;
                     return <View style={styles.smallSquare} key={`sub${i}${j}`}>{this.renderTerrain(i, j)}{this.renderScenery(i, j)}</View>
+                    //return <View style={styles.smallSquare} key={`sub${i}${j}`}>{this.renderTerrain(i, j)}</View>
                 })}
             </View>
         })
     }
 
     render() {
+        console.log(this.props)
         let content = (this.props.battleground.numberOfTerrains.length > 0) ? this.renderGrid() : this.renderEmptyGrid();
         return (
             <View style={styles.mapContainer}>

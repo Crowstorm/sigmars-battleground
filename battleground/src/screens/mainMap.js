@@ -11,7 +11,7 @@ import Terrain from '../assets/buttons/terrain.png';
 import SceneryActive from '../assets/buttons/sceneryActive.png';
 import Scenery from '../assets/buttons/scenery.png';
 
-import { toggleTerrain, toggleScenery, pushPickedSquares, rollNumberOfTerrains, pickSquares } from '../store/actions/battleground';
+import { toggleTerrain, toggleScenery, pushPickedSquares, rollNumberOfTerrains, pickSquares, incrementHelperIndex, zeroHelperIndex } from '../store/actions/battleground';
 import { renderEmptyMap } from './functions/mainMapLogic';
 
 import Map from './components/map';
@@ -52,7 +52,7 @@ class MainMapScreen extends React.Component {
                     {/* <Text> Toggle Terrain </Text> */}
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.generatorButton} onPress={this.handleMapGeneration} >
-                    <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={{borderRadius: 10}}>
+                    <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{borderRadius: 10}}>
                         <View>
                             <Text style={styles.generatorButtonText}>Generate Map</Text>
                         </View>
@@ -103,6 +103,9 @@ const styles = StyleSheet.create({
     },
     generatorButtonText: {
         color: "#AB7A30",
+        textShadowOffset: {width: 1, height: 1},
+        textShadowColor: "black",
+        textShadowRadius: 1,
         fontWeight: "bold",
         fontSize: 16,
         padding: 10
@@ -116,6 +119,8 @@ const mapDispatchToProps = dispatch => {
         toggleScenery: () => dispatch(toggleScenery()),
         rollNumberOfTerrains: () => dispatch(rollNumberOfTerrains()),
         pickSquares: () => dispatch(pickSquares()),
+        incrementHelperIndex: () => dispatch(incrementHelperIndex()),
+        zeroHelperIndex: () => dispatch(zeroHelperIndex()),
     }
 }
 
