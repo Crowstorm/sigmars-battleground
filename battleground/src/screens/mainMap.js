@@ -36,23 +36,48 @@ class MainMapScreen extends React.Component {
         this.props.pickSquares();
     }
 
+    handleRenderTerrainButton = () => {
+        if (this.props.battleground.terrainVisibility) {
+            return (
+                <TouchableOpacity style={styles.terrainIconContainer} onPress={this.onToggleTerrain}>
+                    <Image source={TerrainActive} style={styles.terrainIcon} />
+                </TouchableOpacity>
+            )
+        }
+        return (
+            <TouchableOpacity style={styles.terrainIconContainer} onPress={this.onToggleTerrain}>
+                <Image source={Terrain} style={styles.terrainIcon} />
+            </TouchableOpacity>
+        )
+    }
+
+    handleRenderSceneryButton = () => {
+        if (this.props.battleground.sceneryVisibility) {
+            return (
+                <TouchableOpacity style={styles.sceneryIconContainer} onPress={this.onToggleScenery}>
+                    <Image source={SceneryActive} style={styles.sceneryIcon} />
+                </TouchableOpacity>
+            )
+        }
+        return (
+            <TouchableOpacity style={styles.sceneryIconContainer} onPress={this.onToggleScenery}>
+            <Image source={Scenery} style={styles.sceneryIcon} />
+        </TouchableOpacity>
+        )
+    }
+
     render() {
-        console.log(this.props)
+        let terrainButton = this.handleRenderTerrainButton();
+        let sceneryButton = this.handleRenderSceneryButton();
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
                 {/* <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1> */}
-                <TouchableOpacity style={styles.terrainIconContainer} onPress={this.onToggleTerrain}>
-                    <Image source={TerrainActive} style={styles.terrainIcon}/>
-                    {/* <Text> Toggle Terrain </Text> */}
-                </TouchableOpacity>
+                {terrainButton}
                 <Map {...this.props} />
                 {/* <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2> */}
-                <TouchableOpacity style={styles.sceneryIconContainer} onPress={this.onToggleScenery}>
-                    <Image source={SceneryActive} style={styles.sceneryIcon}/>
-                    {/* <Text> Toggle Terrain </Text> */}
-                </TouchableOpacity>
+                {sceneryButton}
                 <TouchableOpacity style={styles.generatorButton} onPress={this.handleMapGeneration} >
-                    <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{borderRadius: 10}}>
+                    <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
                         <View>
                             <Text style={styles.generatorButtonText}>Generate Map</Text>
                         </View>
@@ -73,14 +98,14 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         position: 'relative'
         //justifyContent: "center"
-    },    
+    },
     terrainIconContainer: {
         position: "absolute",
-       alignSelf: 'flex-start',
-       paddingTop: "150%",
-       paddingLeft: "17%",
-    //   flex: 1
-   },
+        alignSelf: 'flex-start',
+        paddingTop: "150%",
+        paddingLeft: "17%",
+        //   flex: 1
+    },
     terrainIcon: {
         height: 40,
         width: 40
@@ -103,7 +128,7 @@ const styles = StyleSheet.create({
     },
     generatorButtonText: {
         color: "#AB7A30",
-        textShadowOffset: {width: 1, height: 1},
+        textShadowOffset: { width: 1, height: 1 },
         textShadowColor: "black",
         textShadowRadius: 1,
         fontWeight: "bold",
