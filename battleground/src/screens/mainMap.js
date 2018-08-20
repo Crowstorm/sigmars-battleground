@@ -11,7 +11,7 @@ import Terrain from '../assets/buttons/terrain.png';
 import SceneryActive from '../assets/buttons/sceneryActive.png';
 import Scenery from '../assets/buttons/scenery.png';
 
-import { toggleTerrain, toggleScenery, pushPickedSquares, rollNumberOfTerrains, pickSquares, incrementHelperIndex, zeroHelperIndex } from '../store/actions/battleground';
+import { toggleTerrain, toggleScenery, pushPickedSquares, rollNumberOfTerrains, pickSquares, incrementHelperIndex, zeroHelperIndex, setTerrainFlag  } from '../store/actions/battleground';
 import { renderEmptyMap } from './functions/mainMapLogic';
 
 import Map from './components/map';
@@ -146,6 +146,7 @@ const mapDispatchToProps = dispatch => {
         pickSquares: () => dispatch(pickSquares()),
         incrementHelperIndex: () => dispatch(incrementHelperIndex()),
         zeroHelperIndex: () => dispatch(zeroHelperIndex()),
+        setTerrainFlag: (index1,index2) => dispatch(setTerrainFlag(index1,index2))
     }
 }
 

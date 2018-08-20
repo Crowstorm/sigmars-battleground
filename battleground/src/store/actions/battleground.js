@@ -24,6 +24,14 @@ export const zeroHelperIndex = () =>{
     }
 }
 
+export const setTerrainFlag = (index1, index2) =>{
+    return{
+        type: 'SET_TERRAIN_FLAG',
+        index1,
+        index2
+    }
+}
+
 export const pickSquares = () =>{
     return function (dispatch, getState) {
         let value = [];

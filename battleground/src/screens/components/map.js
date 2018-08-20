@@ -13,6 +13,7 @@ import Test from '../../assets/terrain/test.png';
 
 class Map extends React.Component {
     getTerrain = (index) => {
+        this.props.setTerrainFlag(0, 0)
         switch (index) {
             case 0:
                 return <Image style={styles.terrain} source={Barrel} />
@@ -68,7 +69,7 @@ class Map extends React.Component {
             //pierdolnij mapa
             if (valueTable.length !== 0 && j === valueTable[0][0]) {
                 //set flags
-                
+
                 // roll terrain
                 if (this.props.battleground.terrainVisibility) {
                     return this.getTerrain(valueTable[0][1]);
