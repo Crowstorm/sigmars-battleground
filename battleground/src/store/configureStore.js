@@ -3,10 +3,12 @@ import ReduxPromise from 'redux-promise'
 import thunk from 'redux-thunk'
 
 import battlegroundReducer from './reducers/battleground';
+import diceReducer from './reducers/dice';
 
 
 const rootReducer = combineReducers({
-    battleground: battlegroundReducer
+    battleground: battlegroundReducer,
+    dice: diceReducer
 });
 
 let composeEnhancers = compose;
