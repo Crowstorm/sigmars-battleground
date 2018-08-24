@@ -26,7 +26,7 @@ class DiceScreen extends React.Component {
                 <Text> Number of dice</Text>
                 <TextInput style={styles.textInput}  
                 keyboardType='numeric'
-                value={this.props.dice.numberOfDice}
+                value={this.props.dice.numberOfDice.toString()}
                 onChangeText={(value) =>this.handleNumberOfDice(value)}
                 /> 
             </LinearGradient>

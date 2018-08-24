@@ -66,15 +66,25 @@ class Map extends React.Component {
             //console.log({ valueTable })
             //check if its the proper small square
 
-            //pierdolnij mapa
-            if (valueTable.length !== 0 && j === valueTable[0][0]) {
-                //set flags
-
-                // roll terrain
-                if (this.props.battleground.terrainVisibility) {
-                    return this.getTerrain(valueTable[0][1]);
+            if (valueTable.length !== 0) {
+                for (let z = 0; z < valueTable.length; z++) {
+                    if (j === valueTable[z][0]) {
+                        if (this.props.battleground.terrainVisibility) {
+                            return this.getTerrain(valueTable[z][1]);
+                        }
+                    }
                 }
             }
+
+            //pierdolnij mapa
+            // if (valueTable.length !== 0 && j === valueTable[0][0]) {
+            //     //set flags
+
+            //     // roll terrain
+            //     if (this.props.battleground.terrainVisibility) {
+            //         return this.getTerrain(valueTable[0][1]);
+            //     }
+            // }
         }
     }
 

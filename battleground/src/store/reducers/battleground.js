@@ -52,7 +52,7 @@ const reducer = (state = initialState, action) => {
         }
         case 'SET_TERRAIN_FLAG':{
             let pickedSquaresCopy = state.pickedSquares;
-            pickedSquaresCopy[action.index1][action.index2][3] = true;
+           // pickedSquaresCopy[action.index1][action.index2][3] = true;
             console.log(pickedSquaresCopy);
             // return{
             //     ...state,
