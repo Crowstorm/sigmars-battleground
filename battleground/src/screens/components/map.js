@@ -48,43 +48,40 @@ class Map extends React.Component {
     renderScenery = (i, j) => {
         if (this.props.battleground.pickedSquares.length !== 0 && this.props.battleground.numberOfTerrains.length !== 0) {
             let valueTable = this.props.battleground.pickedSquares[i];
-            //for loop length valtable
-
             //check if its the proper small square
-            if (valueTable.length !== 0 && j === valueTable[0][0]) {
-                // roll scenery
-                if (this.props.battleground.sceneryVisibility) {
-                    return this.getScenery(valueTable[0][2]);
+            if (valueTable.length !== 0) {
+                for (let z = 0; z < valueTable.length; z++) {
+                    if (j === valueTable[z][0]) {
+                        //roll terrain
+                        if (this.props.battleground.sceneryVisibility) {
+                            return this.getScenery(valueTable[z][2]);                        }
+                    }
                 }
             }
+
+            // if (valueTable.length !== 0 && j === valueTable[0][0]) {
+            //     // roll scenery
+            //     if (this.props.battleground.sceneryVisibility) {
+            //         return this.getScenery(valueTable[0][2]);
+            //     }
+            // }
         }
     }
 
     renderTerrain = (i, j) => {
         if (this.props.battleground.pickedSquares.length !== 0 && this.props.battleground.numberOfTerrains.length !== 0) {
             let valueTable = this.props.battleground.pickedSquares[i];
-            //console.log({ valueTable })
             //check if its the proper small square
-
             if (valueTable.length !== 0) {
                 for (let z = 0; z < valueTable.length; z++) {
                     if (j === valueTable[z][0]) {
+                        //roll terrain
                         if (this.props.battleground.terrainVisibility) {
                             return this.getTerrain(valueTable[z][1]);
                         }
                     }
                 }
             }
-
-            //pierdolnij mapa
-            // if (valueTable.length !== 0 && j === valueTable[0][0]) {
-            //     //set flags
-
-            //     // roll terrain
-            //     if (this.props.battleground.terrainVisibility) {
-            //         return this.getTerrain(valueTable[0][1]);
-            //     }
-            // }
         }
     }
 

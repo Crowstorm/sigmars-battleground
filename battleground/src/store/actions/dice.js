@@ -4,3 +4,11 @@ export const setNumberOfDice = (value) =>{
         value
     }
 }
+
+export const rollTheDice = () =>{
+    return function (dispatch, getState) {
+        let numberOfDice = getState().dice.numberOfDice;
+        console.log(numberOfDice);
+    }
+
+}
