@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, Button, Image, StyleSheet } fr
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { setNumberOfDice, rollTheDice } from '../store/actions/dice';
+import { setNumberOfDice, rollTheDice, rerollDice } from '../store/actions/dice';
 
 
 class DiceScreen extends React.Component {
@@ -19,13 +19,18 @@ class DiceScreen extends React.Component {
         this.props.setNumberOfDice(number);
     }
 
-    handleRollDice = () =>{
+    handleRollDice = () => {
         // console.log('elo?')
         this.props.rollTheDice();
     }
 
+    handleReroll = () =>{
+        this.props.rerollDice();
+    }
+
     render() {
         console.log(this.props)
+        let { one, two, three, four, five, six } = this.props.dice;
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
                 <Text> Number of dice</Text>
@@ -35,12 +40,20 @@ class DiceScreen extends React.Component {
                     onChangeText={(value) => this.handleNumberOfDice(value)}
                 />
                 <View style={styles.diceResult}>
-                    <Text>Number of 6s: </Text>
-                    <Text>Number of 5s and above:</Text>
-                    <Text>Number of 4s and above:</Text>
-                    <Text>Number of 3s and above:</Text>
-                    <Text>Number of 2s and above:</Text>
-                    <Text>Number of 1s:</Text>
+                    <Text>Number of 6s: {six}</Text>
+                    <Text>Number of 5s and above:{six + five}</Text>
+                    <Text>Number of 4s and above:{six + five + four}</Text>
+                    <Text>Number of 3s and above:{six + five + four + three}</Text>
+                    <Text>Number of 2s and above:{six + five + four + three + two}</Text>
+                    <Text>Number of 1s:{one}</Text>
+
+                    <TouchableOpacity style={styles.rollButton} onPress={this.handleReroll} >
+                        <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
+                            <View>
+                                <Text style={styles.rollButtonText}>Reroll</Text>
+                            </View>
+                        </LinearGradient>
+                    </TouchableOpacity>
                 </View>
                 <TouchableOpacity style={styles.rollButton} onPress={this.handleRollDice} >
                     <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
@@ -62,7 +75,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingTop: "10%",
         flexDirection: "column",
-       // position: 'relative',
+        // position: 'relative',
         // justifyContent: "center"
     },
     textInput: {
@@ -70,7 +83,7 @@ const styles = StyleSheet.create({
         // borderColor: 'gray',
         // borderWidth: 1
     },
-    diceResult:{
+    diceResult: {
         height: "50%",
         borderWidth: 1,
         borderColor: 'pink',
@@ -103,7 +116,8 @@ const styles = StyleSheet.create({
 const mapDispatchToProps = dispatch => {
     return {
         setNumberOfDice: (value) => dispatch(setNumberOfDice(value)),
-        rollTheDice: ()=> dispatch(rollTheDice()),
+        rollTheDice: () => dispatch(rollTheDice()),
+        rerollDice: () =>dispatch(rerollDice()),
     }
 }
 

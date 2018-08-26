@@ -1,12 +1,12 @@
 const initialState = {
     numberOfDice: 0,
     rolledDice: [],
-    6: 0,
-    5: 0,
-    4: 0,
-    3: 0,
-    2: 0,
-    1: 0
+    six: 0,
+    five: 0,
+    four: 0,
+    three: 0,
+    two: 0,
+    one: 0
 }
 
 const reducer = (state = initialState, action) => {
@@ -20,7 +20,13 @@ const reducer = (state = initialState, action) => {
         case 'ROLLED_DICE': {
             return {
                 ...state,
-                rolledDice: action.rolledDice
+                rolledDice: action.rolledDice,
+                one: action.one,
+                two: action.two,
+                three: action.three,
+                four: action.four,
+                five: action.five,
+                six: action.six,
             }
         }
         default:
