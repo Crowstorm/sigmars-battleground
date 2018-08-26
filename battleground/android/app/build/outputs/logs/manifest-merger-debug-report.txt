@@ -81,7 +81,6 @@ MERGED from [battleground:react-native-navigation:unspecified] D:\Repozytoria\ba
 		ADDED from D:\Repozytoria\battleground\battleground\android\app\src\main\AndroidManifest.xml:23:17-81
 uses-sdk
 INJECTED from D:\Repozytoria\battleground\battleground\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [battleground:react-native-linear-gradient:unspecified] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-linear-gradient\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [battleground:react-native-vector-icons:unspecified] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-vector-icons\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [battleground:react-native-navigation:unspecified] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-navigation\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.55.4] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\AndroidManifest.xml:7:5-9:41
@@ -108,6 +107,7 @@ MERGED from [com.android.support:animated-vector-drawable:25.3.1] D:\Repozytoria
 MERGED from [com.android.support:support-vector-drawable:25.3.1] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-compat:25.3.1] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
 MERGED from [com.balysv.materialmenu:material-menu:1.5.4] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\com.balysv.materialmenu\material-menu\1.5.4\AndroidManifest.xml:8:5-10:41
+MERGED from [battleground:react-native-linear-gradient:unspecified] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-linear-gradient\unspecified\AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.3.1] D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion

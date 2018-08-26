@@ -35,7 +35,12 @@ class DiceScreen extends React.Component {
                     onChangeText={(value) => this.handleNumberOfDice(value)}
                 />
                 <View style={styles.diceResult}>
-
+                    <Text>Number of 6s: </Text>
+                    <Text>Number of 5s and above:</Text>
+                    <Text>Number of 4s and above:</Text>
+                    <Text>Number of 3s and above:</Text>
+                    <Text>Number of 2s and above:</Text>
+                    <Text>Number of 1s:</Text>
                 </View>
                 <TouchableOpacity style={styles.rollButton} onPress={this.handleRollDice} >
                     <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
@@ -68,7 +73,10 @@ const styles = StyleSheet.create({
     diceResult:{
         height: "50%",
         borderWidth: 1,
-        borderColor: 'pink'
+        borderColor: 'pink',
+        // alignItems: "center",
+        justifyContent: "center"
+
     },
     rollButton: {
         borderColor: "#AB7A30",
