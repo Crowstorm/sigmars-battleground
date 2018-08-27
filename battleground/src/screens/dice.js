@@ -24,8 +24,8 @@ class DiceScreen extends React.Component {
         this.props.rollTheDice();
     }
 
-    handleReroll = () =>{
-        this.props.rerollDice();
+    handleReroll = (value) =>{
+        this.props.rerollDice(value);
     }
 
     render() {
@@ -47,7 +47,7 @@ class DiceScreen extends React.Component {
                     <Text>Number of 2s and above:{six + five + four + three + two}</Text>
                     <Text>Number of 1s:{one}</Text>
 
-                    <TouchableOpacity style={styles.rollButton} onPress={this.handleReroll} >
+                    <TouchableOpacity style={styles.rollButton} onPress={() => this.handleReroll(2)} >
                         <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
                             <View>
                                 <Text style={styles.rollButtonText}>Reroll</Text>
@@ -117,7 +117,7 @@ const mapDispatchToProps = dispatch => {
     return {
         setNumberOfDice: (value) => dispatch(setNumberOfDice(value)),
         rollTheDice: () => dispatch(rollTheDice()),
-        rerollDice: () =>dispatch(rerollDice()),
+        rerollDice: (value) =>dispatch(rerollDice(value)),
     }
 }
 
