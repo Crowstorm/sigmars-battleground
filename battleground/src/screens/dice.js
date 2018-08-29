@@ -43,18 +43,18 @@ class DiceScreen extends React.Component {
             { 'image': dice3, 'number': 3 },
             { 'image': dice4, 'number': 4 },
             { 'image': dice5, 'number': 5 },
-            { 'image': dice6, 'number': 6 }
+            // { 'image': dice6, 'number': 6 }
         ];
 
         return _.map(dice, (d) => {
             return (
-                <View key={d.number}>
-                    <TouchableOpacity style={styles.rollButton} onPress={() => this.handleReroll(d.number)} >
-                            <View style={styles.rerollDice}>
+               // <View key={d.number}>
+                    <TouchableOpacity key={d.number} style={styles.rerollDice} onPress={() => this.handleReroll(d.number)} >
+                            {/* <View style={styles.rerollDice}> */}
                                 <Image source={d.image} style={styles.rerollDice} />
-                            </View>
+                            {/* </View> */}
                     </TouchableOpacity>
-                </View>
+               // </View>
             )
         });
     }
@@ -73,12 +73,12 @@ class DiceScreen extends React.Component {
                     onChangeText={(value) => this.handleNumberOfDice(value)}
                 />
                 <View style={styles.diceResult}>
-                    <Text>Number of 6s: {six}</Text>
-                    <Text>Number of 5s and above:{six + five}</Text>
-                    <Text>Number of 4s and above:{six + five + four}</Text>
-                    <Text>Number of 3s and above:{six + five + four + three}</Text>
-                    <Text>Number of 2s and above:{six + five + four + three + two}</Text>
-                    <Text>Number of 1s:{one}</Text>
+                    <Text style={styles.diceResultText}>Number of 6s: <Text style={styles.diceResultTextGenerated}>  {six}  </Text></Text>
+                    <Text style={styles.diceResultText}>Number of 5s and above:<Text style={styles.diceResultTextGenerated}>  {six + five}  </Text></Text>
+                    <Text style={styles.diceResultText}>Number of 4s and above:<Text style={styles.diceResultTextGenerated}>  {six + five + four}  </Text></Text>
+                    <Text style={styles.diceResultText}>Number of 3s and above:<Text style={styles.diceResultTextGenerated}>  {six + five + four + three}  </Text></Text>
+                    <Text style={styles.diceResultText}>Number of 2s and above:<Text style={styles.diceResultTextGenerated}>  {six + five + four + three + two}  </Text></Text>
+                    <Text style={styles.diceResultText}>Number of 1s:<Text style={styles.diceResultTextGenerated}>  {one}  </Text></Text>
                 </View>
 
                 <View style={styles.rerollView}>
@@ -114,17 +114,27 @@ const styles = StyleSheet.create({
     },
     diceResult: {
         height: "50%",
+        width: "100%",
         borderWidth: 1,
         borderColor: 'pink',
-        // alignItems: "center",
-        justifyContent: "center"
-
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    diceResultText:{
+        color: "#AB7A30",
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowColor: "black",
+        textShadowRadius: 1,
+    },
+    diceResultTextGenerated:{
+        fontWeight: "bold", 
+        fontSize: 16
     },
     rollButton: {
         borderColor: "#AB7A30",
         borderWidth: 2,
         borderRadius: 10,
-        marginTop: "10%",
+        marginTop: "5%",
     },
     rollButtonText: {
         color: "#AB7A30",
@@ -136,7 +146,12 @@ const styles = StyleSheet.create({
         padding: 10
     },
     rerollView:{
-        flexDirection: "row"
+        width: "100%",
+        marginTop: "5%",
+        flexDirection: "row",
+        justifyContent: 'space-evenly',
+        borderColor: "red",
+        borderWidth: 1
     },
     rerollDice:{
         height: 50,
