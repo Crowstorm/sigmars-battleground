@@ -1,6 +1,7 @@
 const initialState = {
     numberOfDice: 0,
     rolledDice: [],
+    isRolled: false,
     six: 0,
     five: 0,
     four: 0,
@@ -27,6 +28,7 @@ const reducer = (state = initialState, action) => {
                 four: action.four,
                 five: action.five,
                 six: action.six,
+                isRolled: true
             }
         }
         default:

@@ -237,21 +237,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Crowstorm\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="D:\Repozytoria\battleground\battleground\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_74ca2be8f90d22f8e772df34594f55270f31a77c.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\Repozytoria\battleground\battleground\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\libs\infer-annotations-4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="9809e90be788acdb479b2b44e2112f3295a03068">
         <dex dex="D:\Repozytoria\battleground\battleground\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_5d36c63167cb0eb44e747fea93195852081e3a6b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Crowstorm\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="D:\Repozytoria\battleground\battleground\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_74ca2be8f90d22f8e772df34594f55270f31a77c.jar" />
     </item>
     <item
         is-multidex="false"

@@ -1,20 +1,23 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Button, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Button, Image, Modal, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 
 import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/Octicons';
 
+import Info from '../assets/buttons/info.png'
+
 import TerrainActive from '../assets/buttons/terrainActive.png';
 import Terrain from '../assets/buttons/terrain.png';
 import SceneryActive from '../assets/buttons/sceneryActive.png';
 import Scenery from '../assets/buttons/scenery.png';
 
-import { toggleTerrain, toggleScenery, pushPickedSquares, rollNumberOfTerrains, pickSquares, incrementHelperIndex, zeroHelperIndex, setTerrainFlag  } from '../store/actions/battleground';
+import { toggleTerrain, toggleScenery, pushPickedSquares, rollNumberOfTerrains, pickSquares, incrementHelperIndex, zeroHelperIndex, setTerrainFlag } from '../store/actions/battleground';
 import { renderEmptyMap } from './functions/mainMapLogic';
 
 import Map from './components/map';
+import MapLegend from './components/modalMapLegend';
 
 class MainMapScreen extends React.Component {
     static navigatorStyle = {
@@ -23,6 +26,18 @@ class MainMapScreen extends React.Component {
         navBarBackgroundColor: 'black',
         tabBarBackgroundColor: 'black'
     };
+    constructor(props) {
+        super(props);
+        this.state = {
+            modalVisible: false,
+        };
+    }
+
+
+
+    setModalVisible(visible) {
+        this.setState({ modalVisible: visible });
+    }
 
     onToggleTerrain = () => {
         this.props.toggleTerrain();
@@ -61,8 +76,8 @@ class MainMapScreen extends React.Component {
         }
         return (
             <TouchableOpacity style={styles.sceneryIconContainer} onPress={this.onToggleScenery}>
-            <Image source={Scenery} style={styles.sceneryIcon} />
-        </TouchableOpacity>
+                <Image source={Scenery} style={styles.sceneryIcon} />
+            </TouchableOpacity>
         )
     }
 
@@ -71,17 +86,28 @@ class MainMapScreen extends React.Component {
         let sceneryButton = this.handleRenderSceneryButton();
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
+                <MapLegend />
+
                 {/* <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1> */}
                 {terrainButton}
                 <Map {...this.props} />
                 {/* <Icon2 name="milestone" size={30} style={styles.sceneryIcon} onPress={this.onToggleScenery}></Icon2> */}
                 {sceneryButton}
+
                 <TouchableOpacity style={styles.generatorButton} onPress={this.handleMapGeneration} >
                     <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
                         <View>
                             <Text style={styles.generatorButtonText}>Generate Map</Text>
                         </View>
                     </LinearGradient>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() => { this.setModalVisible(true); }}>
+                    <Image
+                        source={Info}
+                        style={styles.infoIcon}
+                    />
                 </TouchableOpacity>
             </LinearGradient>
         )
@@ -134,6 +160,11 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 16,
         padding: 10
+    },
+    infoIcon: {
+        height: 30,
+        width: 30,
+        marginTop: "3%"
     }
 
 })
@@ -146,7 +177,7 @@ const mapDispatchToProps = dispatch => {
         pickSquares: () => dispatch(pickSquares()),
         incrementHelperIndex: () => dispatch(incrementHelperIndex()),
         zeroHelperIndex: () => dispatch(zeroHelperIndex()),
-        setTerrainFlag: (index1,index2) => dispatch(setTerrainFlag(index1,index2))
+        setTerrainFlag: (index1, index2) => dispatch(setTerrainFlag(index1, index2))
     }
 }
 

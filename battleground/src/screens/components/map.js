@@ -9,6 +9,12 @@ import Tree from '../../assets/terrain/pine-tree.png';
 import Tent from '../../assets/terrain/tent.png';
 
 import Test from '../../assets/terrain/test.png';
+import Arcane from '../../assets/scenery/arcane.png';
+import Damned from '../../assets/scenery/damned.png';
+import Deadly from '../../assets/scenery/deadly.png';
+import Inspiring from '../../assets/scenery/inspiring.png';
+import Mystical from '../../assets/scenery/mystical.png';
+import Sinister from '../../assets/scenery/sinister.png';
 
 
 class Map extends React.Component {
@@ -31,17 +37,17 @@ class Map extends React.Component {
     getScenery = (index) => {
         switch (index) {
             case 1:
-                return <Image style={styles.scenery} source={Test} />
+                return <Image style={styles.scenery} source={Damned} />
             case 2:
-                return <Image style={styles.scenery} source={Test} />
+                return <Image style={styles.scenery} source={Arcane} />
             case 3:
-                return <Image style={styles.scenery} source={Test} />
+                return <Image style={styles.scenery} source={Inspiring} />
             case 4:
-                return <Image style={styles.scenery} source={Test} />
+                return <Image style={styles.scenery} source={Deadly} />
             case 5:
-                return <Image style={styles.scenery} source={Test} />
+                return <Image style={styles.scenery} source={Mystical} />
             case 6:
-                return <Image style={styles.scenery} source={Test} />
+                return <Image style={styles.scenery} source={Sinister} />
         }
     }
 
@@ -104,7 +110,7 @@ class Map extends React.Component {
             return <View style={styles.mainSquare} key={`main${i}`}>
                 {_.map(subSquares, (smallSquare, j) => {
                     let test = this.props.battleground.pickedSquares.length;
-                    return <View style={styles.smallSquare} key={`sub${i}${j}`}>{this.renderTerrain(i, j)}{this.renderScenery(i, j)}</View>
+                    return <View style={styles.smallSquare} key={`sub${i}${j}`}>{this.renderScenery(i, j)}{this.renderTerrain(i, j)}</View>
                     //return <View style={styles.smallSquare} key={`sub${i}${j}`}>{this.renderTerrain(i, j)}</View>
                 })}
             </View>
@@ -158,9 +164,10 @@ const styles = StyleSheet.create({
         opacity: 0
     },
     scenery: {
-        width: 30,
-        height: 30,
+        width: 20,
+        height: 20,
         position: "absolute",
+        zIndex: 3
     },
     hideScenery: {
         opacity: 0

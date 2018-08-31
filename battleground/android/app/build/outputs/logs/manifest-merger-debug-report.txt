@@ -57,7 +57,7 @@ ADDED from D:\Repozytoria\battleground\battleground\android\app\src\main\Android
 	android:label
 		ADDED from D:\Repozytoria\battleground\battleground\android\app\src\main\AndroidManifest.xml:15:9-41
 	android:windowSoftInputMode
-		ADDED from D:\Repozytoria\battleground\battleground\android\app\src\main\AndroidManifest.xml:17:9-51
+		ADDED from D:\Repozytoria\battleground\battleground\android\app\src\main\AndroidManifest.xml:17:9-48
 	android:configChanges
 		ADDED from D:\Repozytoria\battleground\battleground\android\app\src\main\AndroidManifest.xml:16:9-79
 	android:name
