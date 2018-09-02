@@ -18,16 +18,16 @@ class SplashScreen extends React.Component {
     render() {
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
-                <Text>
+                <Text style={styles.text}>
                     Thank you for using <Text>AoS Battleground</Text>.{"\n"}
                     Please keep in mind that app is in it's early stages.{"\n"}
-                    If you see any bug or error, or want to ask for a feature that would benefit you, please do contact me at EMAIL or use contact form built within the app.{"\n"}
+                    If you see any bug or error, or want to ask for a feature that would benefit you, please do contact me at EMAIL or use contact form built within the app. You may also post in a place where you found out about this app.{"\n"}
                     I hope you'll enjoy using it.
                 </Text>
                 <TouchableOpacity
                     onPress={() => { this.enterAppHandler() }}
                     style={styles.button}>
-                    <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
+                    <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10}}>
                         <View>
                             <Text style={styles.buttonText}>Join The Battle</Text>
                         </View>
@@ -48,12 +48,18 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "center"
     },
+    text:{
+        paddingLeft: "5%",
+        paddingRight: "5%",
+        textAlign: "center"
+    },
     button: {
         borderColor: "#AB7A30",
         borderWidth: 2,
         borderRadius: 10,
         marginTop: 15,
         width: "50%",
+        marginTop: "20%" 
     },
     buttonText: {
         color: "#AB7A30",
