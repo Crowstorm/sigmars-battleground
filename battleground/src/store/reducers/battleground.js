@@ -9,7 +9,8 @@ const initialState = {
     numberOfTerrains:[
 
     ],
-    indexHelper: 0
+    indexHelper: 0,
+    modalOpen: false,
 }
 
 const reducer = (state = initialState, action) => {
@@ -50,14 +51,20 @@ const reducer = (state = initialState, action) => {
                 indexHelper: 0
             }
         }
-        case 'SET_TERRAIN_FLAG':{
-            let pickedSquaresCopy = state.pickedSquares;
-           // pickedSquaresCopy[action.index1][action.index2][3] = true;
-            console.log(pickedSquaresCopy);
-            // return{
-            //     ...state,
-            //     pickedSquares: pickedSquaresCopy
-            // }
+        // case 'SET_TERRAIN_FLAG':{
+        //     let pickedSquaresCopy = state.pickedSquares;
+        //    // pickedSquaresCopy[action.index1][action.index2][3] = true;
+        //     console.log(pickedSquaresCopy);
+        //     // return{
+        //     //     ...state,
+        //     //     pickedSquares: pickedSquaresCopy
+        //     // }
+        // }
+        case 'TOGGLE_MAP_LEGEND':{
+            return{
+                ...state,
+                modalOpen: !state.modalOpen
+            }
         }
    
         default:

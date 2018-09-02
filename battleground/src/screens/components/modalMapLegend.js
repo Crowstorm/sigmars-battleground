@@ -121,40 +121,75 @@ class MapLegend extends React.Component {
         )
     }
 
-    renderTerrainInfo = () =>{
-        return(
+    renderTerrainInfo = () => {
+        return (
             <View>
-                <Text>Elo</Text>
+                <View style={styles.iconContainer}>
+                    <Image source={Barrel} style={styles.icon} />
+                </View>
+                <Text style={styles.text}>
+                    Small item that is not really an obstacle. May serve as atmospheric piece on the battlefield.
+                </Text>
+
+                <View style={styles.iconContainer}>
+                    <Image source={Plot} style={styles.icon} />
+                </View>
+                <Text style={styles.text}>
+                    A fence, wall, something that is long, obstructs movement and might serve as a cover.
+                </Text>
+
+                <View style={styles.iconContainer}>
+                    <Image source={Tent} style={styles.icon} />
+                </View>
+                <Text style={styles.text}>
+                    A tent, house, building, camp, whatever fits your board. Might serve as a cover, atmospheric piece or scenery container. Sinister camps are spooky.
+                </Text>
+
+                <View style={styles.iconContainer}>
+                    <Image source={Tree} style={styles.icon} />
+                </View>
+                <Text style={styles.text}>
+                    A single tree or forest, whatever fits your need. Provides cover and a shade for tired troops.
+                </Text>
+
+                <View style={styles.iconContainer}>
+                    <Image source={Mountain} style={styles.icon} />
+                </View>
+                <Text style={styles.text}>
+                    A huge mountain or elevated terrain depending on your inventory and battlefield.
+                </Text>
             </View>
         )
     }
 
-render() {
-    let sceneryButton = this.renderToggleScenery();
-    let terrainButton = this.renderToggleTerrain();
+    render() {
+        let sceneryButton = this.renderToggleScenery();
+        let terrainButton = this.renderToggleTerrain();
 
-    let sceneryInfo = this.renderSceneryInfo();
-    let terrainInfo = this.renderTerrainInfo();
+        let sceneryInfo = this.renderSceneryInfo();
+        let terrainInfo = this.renderTerrainInfo();
 
-    let legend = (this.state.sceneryLegend) ? sceneryInfo : terrainInfo;
-    return (
-        <Modal>
-            <View style={styles.buttonContainer}>
-                {terrainButton}
-                {sceneryButton}
-            </View>
-            <ScrollView>
-                {legend}
-            </ScrollView>
+        let legend = (this.state.sceneryLegend) ? sceneryInfo : terrainInfo;
+        return (
+            <Modal
+             visible={this.props.battleground.modalOpen}
+             animationType="slide">
+                <View style={styles.buttonContainer}>
+                    {terrainButton}
+                    {sceneryButton}
+                </View>
+                <ScrollView>
+                    {legend}
+                </ScrollView>
 
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity>
-                    <Image source={Cancel} style={styles.button} />
-                </TouchableOpacity>
-            </View>
-        </Modal>
-    )
-}
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity onPress={() => this.props.toggleMapLegend()}>
+                        <Image source={Cancel} style={styles.button} />
+                    </TouchableOpacity>
+                </View>
+            </Modal>
+        )
+    }
 }
 
 const styles = StyleSheet.create({

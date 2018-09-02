@@ -75,6 +75,12 @@ export const rollNumberOfTerrains = () =>{
     }
 }
 
+export const toggleMapLegend = () =>{
+    return{
+        type: 'TOGGLE_MAP_LEGEND'
+    }
+}
+
 const singleDiceRoll = () => {
     return Math.floor(Math.random() * 6 + 1);
 }

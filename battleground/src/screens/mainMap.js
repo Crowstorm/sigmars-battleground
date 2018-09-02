@@ -13,7 +13,7 @@ import Terrain from '../assets/buttons/terrain.png';
 import SceneryActive from '../assets/buttons/sceneryActive.png';
 import Scenery from '../assets/buttons/scenery.png';
 
-import { toggleTerrain, toggleScenery, pushPickedSquares, rollNumberOfTerrains, pickSquares, incrementHelperIndex, zeroHelperIndex, setTerrainFlag } from '../store/actions/battleground';
+import { toggleTerrain, toggleScenery, pushPickedSquares, rollNumberOfTerrains, pickSquares, incrementHelperIndex, zeroHelperIndex, setTerrainFlag, toggleMapLegend } from '../store/actions/battleground';
 import { renderEmptyMap } from './functions/mainMapLogic';
 
 import Map from './components/map';
@@ -86,7 +86,7 @@ class MainMapScreen extends React.Component {
         let sceneryButton = this.handleRenderSceneryButton();
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
-                <MapLegend />
+                <MapLegend {...this.props}/>
 
                 {/* <Icon1 name="sword-cross" size={30} style={styles.terrainIcon} onPress={this.onToggleTerrain}></Icon1> */}
                 {terrainButton}
@@ -103,7 +103,7 @@ class MainMapScreen extends React.Component {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => { this.setModalVisible(true); }}>
+                    onPress={() => { this.props.toggleMapLegend()}}>
                     <Image
                         source={Info}
                         style={styles.infoIcon}
@@ -177,7 +177,8 @@ const mapDispatchToProps = dispatch => {
         pickSquares: () => dispatch(pickSquares()),
         incrementHelperIndex: () => dispatch(incrementHelperIndex()),
         zeroHelperIndex: () => dispatch(zeroHelperIndex()),
-        setTerrainFlag: (index1, index2) => dispatch(setTerrainFlag(index1, index2))
+        setTerrainFlag: (index1, index2) => dispatch(setTerrainFlag(index1, index2)),
+        toggleMapLegend: () => dispatch(toggleMapLegend()),
     }
 }
 
