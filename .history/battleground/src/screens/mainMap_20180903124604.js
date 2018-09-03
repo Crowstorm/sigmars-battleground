@@ -24,9 +24,7 @@ class MainMapScreen extends React.Component {
         navBarTextColor: '#AB7A30',
         navBarTranslucent: true,
         navBarBackgroundColor: 'black',
-        tabBarBackgroundColor: 'black',
-        navBarButtonColor: "#AB7A30"
-
+        tabBarBackgroundColor: 'black'
     };
     constructor(props) {
         super(props);
