@@ -168,9 +168,9 @@ const styles = StyleSheet.create({
         zIndex: 3
     },
     scenerySolo:{
-        width: 30,
-        height: 30,
-        position: "absolute",
+        width: 40,
+        height: 40,
+       // position: "absolute",
        // zIndex: 3
     },
     hideScenery: {

@@ -168,8 +168,8 @@ const styles = StyleSheet.create({
         zIndex: 3
     },
     scenerySolo:{
-        width: 30,
-        height: 30,
+        width: 35,
+        height: 35,
         position: "absolute",
        // zIndex: 3
     },
