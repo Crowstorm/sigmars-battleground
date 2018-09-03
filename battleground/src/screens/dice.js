@@ -22,6 +22,21 @@ class DiceScreen extends React.Component {
         tabBarBackgroundColor: 'black'
     };
 
+    constructor(props) {
+        super(props);
+        this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent)
+    }
+
+    onNavigatorEvent = (e) => {
+        if (e.type === 'NavBarButtonPress') {
+            if (e.id === "sideDrawerToggle") {
+                this.props.navigator.toggleDrawer({
+                    side: "left",
+                });
+            }
+        }
+    }
+
     handleNumberOfDice = (value) => {
         let number = parseInt(value);
         this.props.setNumberOfDice(number);
@@ -82,7 +97,7 @@ class DiceScreen extends React.Component {
 
         let renderDiceResult = this.handleRenderRolledContent();
         let renderDiceReroll = this.renderDiceReroll();
-        let diceButtonText = (this.props.dice.isRolled) ?  'Reroll Dice': 'Roll The Dice'
+        let diceButtonText = (this.props.dice.isRolled) ? 'Reroll Dice' : 'Roll The Dice'
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
                 <View>
@@ -152,7 +167,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginTop: "5%",
     },
-    prerollRollButton:{
+    prerollRollButton: {
         borderColor: "#AB7A30",
         borderWidth: 2,
         borderRadius: 10,

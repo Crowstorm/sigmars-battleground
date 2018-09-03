@@ -28,12 +28,21 @@ class MainMapScreen extends React.Component {
     };
     constructor(props) {
         super(props);
-        this.state = {
-            modalVisible: false,
-        };
+        // this.state = {
+        //     modalVisible: false,
+        // };
+        this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent)
     }
 
-
+    onNavigatorEvent = (e) =>{
+        if(e.type === 'NavBarButtonPress'){
+            if(e.id === "sideDrawerToggle"){
+                this.props.navigator.toggleDrawer({
+                    side: "left",
+                });
+            }
+        }
+    }
 
     setModalVisible(visible) {
         this.setState({ modalVisible: visible });

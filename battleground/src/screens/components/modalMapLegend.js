@@ -173,6 +173,7 @@ class MapLegend extends React.Component {
         return (
             <Modal
              visible={this.props.battleground.modalOpen}
+             onRequestClose={()=>{}}
              animationType="slide">
                 <View style={styles.buttonContainer}>
                     {terrainButton}

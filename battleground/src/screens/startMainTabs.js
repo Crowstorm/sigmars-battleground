@@ -11,6 +11,7 @@ const startTabs = () => {
         IconMaterialCommunityIcons.getImageSource("map-legend", 30), // 0 map
         IconFoundation.getImageSource("trees", 30), //1 tree
         IconFontAwesome5.getImageSource("dice", 30), //2 dice
+        IconMaterialCommunityIcons.getImageSource("menu", 30) //3 sidedrawer icon
     ]).then(sources => {
         Navigation.startTabBasedApp({
             tabs: [
@@ -18,15 +19,38 @@ const startTabs = () => {
                     screen: "battleground.MainMapScreen",
                     label: "Battleground",
                     title: "Battleground",
-                    icon: sources[1]
+                    icon: sources[1],
+                    navigatorButtons: {
+                        leftButtons: [
+                            {
+                                icon: sources[3],
+                                title: "Menu",
+                                id: "sideDrawerToggle"
+                            }
+                        ]
+                    }
                 },
                 {
                     screen: "battleground.DiceScreen",
                     label: "Dice",
                     title: "Dice",
-                    icon: sources[2]
+                    icon: sources[2],
+                    navigatorButtons: {
+                        leftButtons: [
+                            {
+                                icon: sources[3],
+                                title: "Menu",
+                                id: "sideDrawerToggle"
+                            }
+                        ]
+                    }
                 },
             ],
+            drawer: {
+                left: {
+                    screen: "battleground.SideDrawer"
+                }
+            },
             tabsStyle: {
                 tabBarSelectedButtonColor: "#AB7A30",
             },
