@@ -1,5 +1,5 @@
 const initialState = {
-    contactFormOpen: false,
+    contactFormOpen: true,
 }
 
 const reducer = (state = initialState, action) => {

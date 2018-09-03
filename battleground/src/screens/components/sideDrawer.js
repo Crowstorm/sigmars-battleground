@@ -1,14 +1,19 @@
 import React from 'react';
-import {View, Text, Dimensions, StyleSheet} from 'react-native';
+import {View, Text, Button, Dimensions, StyleSheet} from 'react-native';
 import { connect } from 'react-redux';
 
+import ContactForm from '../contact';
 import {toggleContactForm} from '../../store/actions/menu';
 
 
 class SideDrawer extends React.Component{
     render(){
         return(
-            <View style={styles.container}><Text>Elo</Text></View>
+            <View style={styles.container}>
+            <Text>Elo</Text>
+            <Button title="Elo" onPress={() => this.props.toggleContactForm()}/>
+            <ContactForm {...this.props}/>
+            </View>
         )
     }
 }
