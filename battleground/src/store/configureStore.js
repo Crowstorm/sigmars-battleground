@@ -4,11 +4,13 @@ import thunk from 'redux-thunk'
 
 import battlegroundReducer from './reducers/battleground';
 import diceReducer from './reducers/dice';
+import menuReducer from './reducers/menu';
 
 
 const rootReducer = combineReducers({
     battleground: battlegroundReducer,
-    dice: diceReducer
+    dice: diceReducer,
+    menu: menuReducer
 });
 
 let composeEnhancers = compose;

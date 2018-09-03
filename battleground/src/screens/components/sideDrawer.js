@@ -1,5 +1,9 @@
 import React from 'react';
 import {View, Text, Dimensions, StyleSheet} from 'react-native';
+import { connect } from 'react-redux';
+
+import {toggleContactForm} from '../../store/actions/menu';
+
 
 class SideDrawer extends React.Component{
     render(){
@@ -18,4 +22,18 @@ const styles = StyleSheet.create({
     }
 })
 
-export default SideDrawer;
+const mapDispatchToProps = dispatch => {
+    return {
+       toggleContactForm: () => dispatch(toggleContactForm()),
+    }
+}
+
+function mapStateToProps(store) {
+    return {
+        menu: store.menu,
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideDrawer);
+
+//export default SideDrawer;
