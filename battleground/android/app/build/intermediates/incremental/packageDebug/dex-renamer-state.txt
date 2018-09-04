@@ -1,4 +1,4 @@
-#Mon Sep 03 20:11:42 CEST 2018
-base.0=D\:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Tue Sep 04 08:53:33 CEST 2018
+base.0=C\:\\sigmars-battleground\\battleground\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=D\:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.0=C\:\\sigmars-battleground\\battleground\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

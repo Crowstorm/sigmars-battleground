@@ -1,13 +1,5 @@
 [
     {
-        "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\stub.xml",
-        "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\battleground\\react-native-navigation\\unspecified\\res\\menu\\stub.xml"
-    },
-    {
-        "merged": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\search_item.xml",
-        "source": "D:\\Repozytoria\\battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\battleground\\react-native-navigation\\unspecified\\res\\menu\\search_item.xml"
-    },
-    {
         "merged": "C:\\sigmars-battleground\\battleground\\android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\search_item.xml",
         "source": "C:\\sigmars-battleground\\battleground\\android\\app\\build\\intermediates\\exploded-aar\\battleground\\react-native-navigation\\unspecified\\res\\menu\\search_item.xml"
     },
