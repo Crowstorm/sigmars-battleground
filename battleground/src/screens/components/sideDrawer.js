@@ -3,7 +3,7 @@ import {View, Text, Button, Dimensions, StyleSheet} from 'react-native';
 import { connect } from 'react-redux';
 
 import ContactForm from '../contact';
-import {toggleContactForm} from '../../store/actions/menu';
+import {toggleContactForm, sendEmail} from '../../store/actions/menu';
 
 
 class SideDrawer extends React.Component{
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
 const mapDispatchToProps = dispatch => {
     return {
        toggleContactForm: () => dispatch(toggleContactForm()),
+       sendEmail: (email, topic, text) => dispatch(sendEmail(email, topic, text)),
     }
 }
 

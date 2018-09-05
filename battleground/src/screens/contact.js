@@ -8,20 +8,28 @@ class ContactForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            email: null,
             topic: null,
             text: null
         };
     }
 
-    handleSendEmail = () => {
-        const to = ['crowstormofficial@gmail.com']; // string or array of email addresses
-        email(to, {
-            // Optional additional arguments
-            subject: this.state.topic,
-            body: this.state.text
-        }).catch(console.error)
-    }
+    // handleSendEmail = () => {
+    //     const to = ['crowstormofficial@gmail.com']; // string or array of email addresses
+    //     email(to, {
+    //         // Optional additional arguments
+    //         subject: this.state.topic,
+    //         body: this.state.text
+    //     }).catch(console.error)
+    // }
 
+    handleSendEmail = () =>{
+        const email = this.state.email;
+        const topic = this.state.topic;
+        const text = this.state.text;
+        //action
+        this.props.sendEmail(email, topic, text);
+    }
     render() {
 
         return (
@@ -31,6 +39,7 @@ class ContactForm extends React.Component {
                 animationType="slide">
 
                 <View style={styles.formContainer}>
+                    <TextInput style={styles.textInput} placeholder="Your email" onChangeText={(email) => this.setState({ email })} />
                     <TextInput style={styles.textInput} placeholder="Topic" onChangeText={(topic) => this.setState({ topic })} />
                     <TextInput style={[styles.textInput, { height: 100 }]} placeholder="Text" onChangeText={(text) => this.setState({ text })} />
                     <Text>{this.state.text}</Text>

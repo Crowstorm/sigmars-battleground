@@ -1,6 +1,6 @@
 import { createStore,  applyMiddleware, compose, combineReducers } from 'redux';
-import ReduxPromise from 'redux-promise'
-import thunk from 'redux-thunk'
+import ReduxPromise from 'redux-promise';
+import thunk from 'redux-thunk';
 
 import battlegroundReducer from './reducers/battleground';
 import diceReducer from './reducers/dice';
