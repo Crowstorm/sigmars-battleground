@@ -1,9 +1,11 @@
 import React from 'react';
-import {View, Text, Button, Dimensions, StyleSheet} from 'react-native';
+import {View, Text, Button, Dimensions, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import { connect } from 'react-redux';
 
 import ContactForm from '../contact';
-import {toggleContactForm, sendEmail} from '../../store/actions/menu';
+import {toggleContactForm} from '../../store/actions/menu';
+
+import Mailbox from '../../assets/buttons/mailbox.png';
 
 
 class SideDrawer extends React.Component{
@@ -11,7 +13,13 @@ class SideDrawer extends React.Component{
         return(
             <View style={styles.container}>
             <Text>Elo</Text>
-            <Button title="Elo" onPress={() => this.props.toggleContactForm()}/>
+            <TouchableOpacity onPress={() => this.props.toggleContactForm()}>
+                <View style={styles.buttonStyle}>
+                    <Text style={styles.buttonText}>Contact Form</Text>
+                    <Image style={styles.buttonImage} source={Mailbox}/>
+                </View>
+            </TouchableOpacity>
+            {/* <Button title="Elo" /> */}
             <ContactForm {...this.props}/>
             </View>
         )
@@ -24,13 +32,31 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "white",
         paddingTop: "5%"
+    },
+    buttonText:{
+        fontSize: 16,
+        fontWeight: "bold",
+        color: 'white',
+        paddingLeft: "10%"
+    },
+    buttonImage:{
+        height: 50,
+        width: 50,
+        marginRight: "10%"
+    },
+    buttonStyle:{
+        borderWidth: 1,
+        borderColor: "#ccc",
+        backgroundColor: "black",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between"
     }
 })
 
 const mapDispatchToProps = dispatch => {
     return {
        toggleContactForm: () => dispatch(toggleContactForm()),
-       sendEmail: (email, topic, text) => dispatch(sendEmail(email, topic, text)),
     }
 }
 

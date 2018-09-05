@@ -91,31 +91,38 @@ class MapLegend extends React.Component {
                         <Image source={Arcane} style={styles.icon} />
                     </View>
 
-                    <Text style={styles.text}><Text style={styles.textBold}>Arcane: </Text>At the start of your hero phase, you can pick one friendly unit within 1" of a Damned terrain feature to make a sacrifice. If you do so, that unit suffers D3 mortal wounds, but you can re-roll hit rolls of 1 for it until your next hero phase.</Text>
+                    <Text style={styles.text}><Text style={styles.textBold}>Arcane: </Text>Add 1 to casting or unbinding rolls for Wizards
+while they are within 1" of any Arcane terrain features.</Text>
                 </View>
                 <View>
                     <View style={styles.iconContainer}>
                         <Image source={Inspiring} style={styles.icon} />
                     </View>
-                    <Text style={styles.text}><Text style={styles.textBold}>Inspiring: </Text>At the start of your hero phase, you can pick one friendly unit within 1" of a Damned terrain feature to make a sacrifice. If you do so, that unit suffers D3 mortal wounds, but you can re-roll hit rolls of 1 for it until your next hero phase.</Text>
+                    <Text style={styles.text}><Text style={styles.textBold}>Inspiring: </Text>Add 1 to the Bravery characteristic of units while
+they are within 1" of any Inspiring terrain features.</Text>
                 </View>
                 <View>
                     <View style={styles.iconContainer}>
                         <Image source={Deadly} style={styles.icon} />
                     </View>
-                    <Text style={styles.text}><Text style={styles.textBold}>Deadly: </Text>At the start of your hero phase, you can pick one friendly unit within 1" of a Damned terrain feature to make a sacrifice. If you do so, that unit suffers D3 mortal wounds, but you can re-roll hit rolls of 1 for it until your next hero phase.</Text>
+                    <Text style={styles.text}><Text style={styles.textBold}>Deadly: </Text>Roll a dice for each unit that finishes a normal
+move or charge move within 1" of any Deadly terrain
+features. On a 1, that unit suffers D3 mortal wounds.</Text>
                 </View>
                 <View>
                     <View style={styles.iconContainer}>
                         <Image source={Mystical} style={styles.icon} />
                     </View>
-                    <Text style={styles.text}><Text style={styles.textBold}>Mystical: </Text>At the start of your hero phase, you can pick one friendly unit within 1" of a Damned terrain feature to make a sacrifice. If you do so, that unit suffers D3 mortal wounds, but you can re-roll hit rolls of 1 for it until your next hero phase.</Text>
+                    <Text style={styles.text}><Text style={styles.textBold}>Mystical: </Text>Roll a dice each time you allocate a wound or
+mortal wound to a model within 1" of any Mystical terrain
+features. On a 6+ the wound or mortal wound is negated.</Text>
                 </View>
                 <View>
                     <View style={styles.iconContainer}>
                         <Image source={Sinister} style={styles.icon} />
                     </View>
-                    <Text style={styles.text}><Text style={styles.textBold}>Sinister: </Text>At the start of your hero phase, you can pick one friendly unit within 1" of a Damned terrain feature to make a sacrifice. If you do so, that unit suffers D3 mortal wounds, but you can re-roll hit rolls of 1 for it until your next hero phase.</Text>
+                    <Text style={styles.text}><Text style={styles.textBold}>Sinister: </Text>Subtract 1 from the Bravery characteristic of units
+while they are within 1" of any Sinister terrain features.</Text>
                 </View>
             </View>
         )
@@ -172,9 +179,9 @@ class MapLegend extends React.Component {
         let legend = (this.state.sceneryLegend) ? sceneryInfo : terrainInfo;
         return (
             <Modal
-             visible={this.props.battleground.modalOpen}
-             onRequestClose={()=>{}}
-             animationType="slide">
+                visible={this.props.battleground.modalOpen}
+                onRequestClose={() => { }}
+                animationType="slide">
                 <View style={styles.buttonContainer}>
                     {terrainButton}
                     {sceneryButton}
