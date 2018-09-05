@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, ScrollView, Text, TouchableOpacity, Button, Image, Modal, TextInput, KeyboardAvoidingView, StyleSheet } from 'react-native';
+import { View, ScrollView, Text, TouchableOpacity, Button, Image, Modal, TextInput, StyleSheet } from 'react-native';
 import email from 'react-native-email';
 import LinearGradient from 'react-native-linear-gradient';
 

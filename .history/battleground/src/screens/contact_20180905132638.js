@@ -39,26 +39,27 @@ class ContactForm extends React.Component {
                 visible={this.props.menu.contactFormOpen}
                 onRequestClose={() => { }}
                 animationType="slide">
+                <KeyboardAvoidingView style={styles.container}> 
+                    <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} >
+                        <TextInput style={styles.textInput} placeholder="Your email" onChangeText={(email) => this.setState({ email })} />
+                        <TextInput style={styles.textInput} placeholder="Topic" onChangeText={(topic) => this.setState({ topic })} />
+                        <TextInput style={[styles.textInput, { height: 100 }]} placeholder="Text" onChangeText={(text) => this.setState({ text })} />
 
-                <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
-                    <TextInput style={styles.textInput} placeholder="Your email" onChangeText={(email) => this.setState({ email })} />
-                    <TextInput style={styles.textInput} placeholder="Topic" onChangeText={(topic) => this.setState({ topic })} />
-                    <TextInput style={[styles.textInput, { height: 100 }]} placeholder="Text" onChangeText={(text) => this.setState({ text })} />
+                        <TouchableOpacity style={styles.sendMailButton} onPress={this.handleSendMail} >
+                            <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
+                                <View>
+                                    <Text style={styles.buttonText}>Send Mail</Text>
+                                </View>
+                            </LinearGradient>
+                        </TouchableOpacity>
+                    </LinearGradient>
 
-                    <TouchableOpacity style={styles.sendMailButton} onPress={this.handleSendMail} >
-                        <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
-                            <View>
-                                <Text style={styles.buttonText}>Send Mail</Text>
-                            </View>
-                        </LinearGradient>
-                    </TouchableOpacity>
-                </LinearGradient>
-
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity onPress={() => this.props.toggleContactForm()}>
-                        <Image source={Cancel} style={styles.button} />
-                    </TouchableOpacity>
-                </View>
+                    <View style={styles.buttonContainer}>
+                        <TouchableOpacity onPress={() => this.props.toggleContactForm()}>
+                            <Image source={Cancel} style={styles.button} />
+                        </TouchableOpacity>
+                    </View>
+                </KeyboardAvoidingView>
             </Modal>
         )
     }

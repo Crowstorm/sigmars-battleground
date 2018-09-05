@@ -129,21 +129,25 @@ class DiceScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        //backgroundColor: "#1b2936",
         borderWidth: 1,
         alignItems: "center",
         paddingTop: "5%",
         flexDirection: "column",
+        // position: 'relative',
+        // justifyContent: "center"
     },
     textInput: {
         height: 40,
         textAlign: "center",
         borderWidth: 2,
         borderColor: "#AB7A30",
-        marginTop: "1%"
     },
     diceResult: {
         height: "50%",
         width: "100%",
+        // borderWidth: 1,
+        // borderColor: 'pink',
         justifyContent: "center",
         alignItems: "center"
     },
@@ -180,8 +184,11 @@ const styles = StyleSheet.create({
     },
     rerollView: {
         width: "100%",
+        //  marginTop: "5%",
         flexDirection: "row",
         justifyContent: 'space-evenly',
+        // borderColor: "red",
+        // borderWidth: 1
     },
     rerollDice: {
         height: 50,

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, ScrollView, Text, TouchableOpacity, Button, Image, Modal, TextInput, KeyboardAvoidingView, StyleSheet } from 'react-native';
+import { View, ScrollView, Text, TouchableOpacity, Button, Image, Modal, TextInput, StyleSheet } from 'react-native';
 import email from 'react-native-email';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -54,11 +54,12 @@ class ContactForm extends React.Component {
                     </TouchableOpacity>
                 </LinearGradient>
 
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity onPress={() => this.props.toggleContactForm()}>
+                <TouchableOpacity onPress={() => this.props.toggleContactForm()}>
+                    <View style={styles.buttonContainer}>
                         <Image source={Cancel} style={styles.button} />
-                    </TouchableOpacity>
-                </View>
+                    </View>
+                </TouchableOpacity>
+
             </Modal>
         )
     }

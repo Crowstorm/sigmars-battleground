@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, ScrollView, Text, TouchableOpacity, Button, Image, Modal, TextInput, KeyboardAvoidingView, StyleSheet } from 'react-native';
+import { View, ScrollView, Text, TouchableOpacity, Button, Image, Modal, TextInput, StyleSheet } from 'react-native';
 import email from 'react-native-email';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -40,7 +40,7 @@ class ContactForm extends React.Component {
                 onRequestClose={() => { }}
                 animationType="slide">
 
-                <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
+                <View style={styles.container}>
                     <TextInput style={styles.textInput} placeholder="Your email" onChangeText={(email) => this.setState({ email })} />
                     <TextInput style={styles.textInput} placeholder="Topic" onChangeText={(topic) => this.setState({ topic })} />
                     <TextInput style={[styles.textInput, { height: 100 }]} placeholder="Text" onChangeText={(text) => this.setState({ text })} />
@@ -52,7 +52,7 @@ class ContactForm extends React.Component {
                             </View>
                         </LinearGradient>
                     </TouchableOpacity>
-                </LinearGradient>
+                </View>
 
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity onPress={() => this.props.toggleContactForm()}>
@@ -67,8 +67,8 @@ class ContactForm extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        borderWidth: 1,
         alignItems: "center",
-        justifyContent: "center",
         paddingTop: "5%",
         flexDirection: "column",
     },
@@ -85,10 +85,8 @@ const styles = StyleSheet.create({
     },
     textInput: {
         height: 40,
-        width: "70%",
-        margin: "3%",
-        borderWidth: 2,
-        borderColor: "#AB7A30",
+        borderWidth: 1,
+        borderColor: "red"
     },
     sendMailButton: {
         borderColor: "#AB7A30",

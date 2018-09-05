@@ -54,11 +54,11 @@ class ContactForm extends React.Component {
                     </TouchableOpacity>
                 </LinearGradient>
 
-                <View style={styles.buttonContainer}>
+                <KeyboardAvoidingView style={styles.buttonContainer}>
                     <TouchableOpacity onPress={() => this.props.toggleContactForm()}>
                         <Image source={Cancel} style={styles.button} />
                     </TouchableOpacity>
-                </View>
+                </KeyboardAvoidingView>
             </Modal>
         )
     }

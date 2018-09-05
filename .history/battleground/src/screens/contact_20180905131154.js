@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, ScrollView, Text, TouchableOpacity, Button, Image, Modal, TextInput, KeyboardAvoidingView, StyleSheet } from 'react-native';
+import { View, ScrollView, Text, TouchableOpacity, Button, Image, Modal, TextInput, StyleSheet } from 'react-native';
 import email from 'react-native-email';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -67,8 +67,8 @@ class ContactForm extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        borderWidth: 1,
         alignItems: "center",
-        justifyContent: "center",
         paddingTop: "5%",
         flexDirection: "column",
     },
@@ -85,10 +85,8 @@ const styles = StyleSheet.create({
     },
     textInput: {
         height: 40,
-        width: "70%",
-        margin: "3%",
-        borderWidth: 2,
-        borderColor: "#AB7A30",
+        borderWidth: 1,
+        borderColor: "red"
     },
     sendMailButton: {
         borderColor: "#AB7A30",

@@ -15,11 +15,14 @@ class SideDrawer extends React.Component {
             <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={styles.container}>
 
             {/* <View style={styles.container}> */}
+                <Text>Elo</Text>
                 <TouchableOpacity onPress={() => this.props.toggleContactForm()}>
-                    <View style={styles.buttonStyle}>
+                    {/* <View style={styles.buttonStyle}> */}
+                    <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={styles.buttonStyle}>
                         <Text style={styles.buttonText}>Contact Form</Text>
                         <Image style={styles.buttonImage} source={Mailbox} />
-                    </View>
+                    </LinearGradient>
+                    {/* </View> */}
                 </TouchableOpacity>
                 {/* <Button title="Elo" /> */}
                 <ContactForm {...this.props} />
@@ -34,12 +37,13 @@ const styles = StyleSheet.create({
     container: {
         width: Dimensions.get('window').width * 0.7,
         flex: 1,
+        backgroundColor: "gray",
         paddingTop: "5%"
     },
     buttonText: {
         fontSize: 16,
         fontWeight: "bold",
-        color: '#AB7A30',
+        color: 'white',
         paddingLeft: "10%"
     },
     buttonImage: {
@@ -49,7 +53,8 @@ const styles = StyleSheet.create({
     },
     buttonStyle: {
         borderWidth: 1,
-        borderColor: "black",
+        borderColor: "#ccc",
+        backgroundColor: "black",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between"
