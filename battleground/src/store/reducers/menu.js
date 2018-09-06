@@ -1,5 +1,6 @@
 const initialState = {
     contactFormOpen: true,
+    aboutOpen: false,
 }
 
 const reducer = (state = initialState, action) => {
@@ -8,6 +9,12 @@ const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 contactFormOpen: !state.contactFormOpen
+            }
+        }
+        case 'TOGGLE_ABOUT':{
+            return{
+                ...state,
+                aboutOpen: !state.aboutOpen
             }
         }
         default:

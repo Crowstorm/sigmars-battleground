@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, ScrollView, Text, TouchableOpacity, Button, Image, Modal, TextInput, KeyboardAvoidingView, StyleSheet } from 'react-native';
-import email from 'react-native-email';
 import LinearGradient from 'react-native-linear-gradient';
 
 
@@ -16,16 +15,8 @@ class ContactForm extends React.Component {
         };
     }
 
-    // handleSendEmail = () => {
-    //     const to = ['crowstormofficial@gmail.com']; // string or array of email addresses
-    //     email(to, {
-    //         // Optional additional arguments
-    //         subject: this.state.topic,
-    //         body: this.state.text
-    //     }).catch(console.error)
-    // }
-
     handleSendEmail = () => {
+        console.log('dziala?')
         const email = this.state.email;
         const topic = this.state.topic;
         const text = this.state.text;
@@ -45,7 +36,7 @@ class ContactForm extends React.Component {
                     <TextInput style={styles.textInput} placeholder="Topic" onChangeText={(topic) => this.setState({ topic })} />
                     <TextInput style={[styles.textInput, { height: 100 }]} placeholder="Text" onChangeText={(text) => this.setState({ text })} />
 
-                    <TouchableOpacity style={styles.sendMailButton} onPress={this.handleSendMail} >
+                    <TouchableOpacity style={styles.sendMailButton} onPress={this.handleSendEmail} >
                         <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
                             <View>
                                 <Text style={styles.buttonText}>Send Mail</Text>

@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 
 import ContactForm from '../contact';
-import { toggleContactForm } from '../../store/actions/menu';
+import About from './about';
+import { toggleContactForm, toggleAbout, sendEmail } from '../../store/actions/menu';
 
 import Mailbox from '../../assets/buttons/mailbox.png';
 
@@ -13,17 +14,20 @@ class SideDrawer extends React.Component {
     render() {
         return (
             <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={styles.container}>
-
-            {/* <View style={styles.container}> */}
                 <TouchableOpacity onPress={() => this.props.toggleContactForm()}>
                     <View style={styles.buttonStyle}>
                         <Text style={styles.buttonText}>Contact Form</Text>
                         <Image style={styles.buttonImage} source={Mailbox} />
                     </View>
                 </TouchableOpacity>
-                {/* <Button title="Elo" /> */}
+                <TouchableOpacity onPress={() => this.props.toggleAbout()}>
+                    <View style={styles.buttonStyle}>
+                        <Text style={styles.buttonText}>About</Text>
+                        <Image style={styles.buttonImage} source={Mailbox} />
+                    </View>
+                </TouchableOpacity>
                 <ContactForm {...this.props} />
-            {/* </View> */}
+                <About {...this.props} />
             </LinearGradient>
 
         )
@@ -59,6 +63,8 @@ const styles = StyleSheet.create({
 const mapDispatchToProps = dispatch => {
     return {
         toggleContactForm: () => dispatch(toggleContactForm()),
+        toggleAbout: () => dispatch(toggleAbout()),
+        sendEmail: (email, topic, text) => dispatch(sendEmail(email, topic, text)),
     }
 }
 
@@ -69,5 +75,3 @@ function mapStateToProps(store) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideDrawer);
-
-//export default SideDrawer;
