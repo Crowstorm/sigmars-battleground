@@ -183,6 +183,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\sigmars-battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-image-picker\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ed80840d302bee1f5dd42cefa1fa8e6100100535">
+        <dex dex="C:\sigmars-battleground\battleground\android\app\build\intermediates\pre-dexed\debug\battleground-react-native-image-picker-unspecified_8ca530af29121336ce2040ad625680d4777c43f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\sigmars-battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-vector-icons\unspecified\jars\classes.jar"
         jumboMode="false"
         optimize="true"
