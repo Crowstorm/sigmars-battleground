@@ -22,7 +22,7 @@ Navigation.registerComponent("battleground.WarscrollScreen", () => WarscrollScre
 Navigation.startSingleScreenApp({
   screen: {
     screen: "battleground.SplashScreen",
-    title: "Welcome"
+    title: "AoS Battleground"
   }
 })
 

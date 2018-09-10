@@ -17,7 +17,7 @@ export const sendEmail = (_email, _topic, _text) => {
             text: _text
         }
 
-        fetch('http://10.1.1.122:5000/api/sendEmail', {
+        fetch('https://intense-dusk-69324.herokuapp.com/api/sendEmail', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -31,7 +31,7 @@ export const sendEmail = (_email, _topic, _text) => {
         })
             .then((res) => res.json())
             .then((res) => {
-                console.log('here is the response: ', res);
+                alert('Email sent. Thank you for contacting me.');
             })
             .catch((err) => {
                 console.error('here is the error: ', err);

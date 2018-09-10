@@ -53,10 +53,11 @@ const styles = StyleSheet.create({
     },
     buttonStyle: {
         borderWidth: 1,
-        borderColor: "black",
+        borderColor: "#AB7A30",
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        marginBottom: 1
     }
 })
 

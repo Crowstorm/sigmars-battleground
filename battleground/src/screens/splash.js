@@ -19,17 +19,17 @@ class SplashScreen extends React.Component {
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
                 <Text style={styles.text}>
-                    Thank you for using <Text>AoS Battleground</Text>.{"\n"}
+                    Thank you for using <Text style={{fontWeight: "bold"}}>AoS Battleground</Text>.{"\n"}
                     Please keep in mind that app is in it's early stages.{"\n"}
-                    If you see any bug or error, or want to ask for a feature that would benefit you, please do contact me at EMAIL or use contact form built within the app. You may also post in a place where you found out about this app.{"\n"}
-                    I hope you'll enjoy using it.
+                    If you see any bug or error, or want to ask for a feature that you would love to see, please contact me at crowstormofficial@gmail.com or use contact form built within the app. You may also post in a place where you found out about this app.{"\n"}
+                    I hope you'll enjoy using it!
                 </Text>
                 <TouchableOpacity
                     onPress={() => { this.enterAppHandler() }}
                     style={styles.button}>
                     <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10}}>
                         <View>
-                            <Text style={styles.buttonText}>Join The Battle</Text>
+                            <Text style={styles.buttonText}>Into Battle</Text>
                         </View>
                     </LinearGradient>
                 </TouchableOpacity>

@@ -21,6 +21,11 @@ class ContactForm extends React.Component {
         const text = this.state.text;
         //action
         this.props.sendEmail(email, topic, text);
+        this.setState({
+            email: null,
+            topic: null,
+            text: null
+        })
     }
     render() {
 
@@ -34,9 +39,9 @@ class ContactForm extends React.Component {
                     <Text style={styles.text}>
                         Use this contact form to contact me about bugs, features that you'd like to see added or just send me your thoughts about the app. Don't be shy.
                     </Text>
-                    <TextInput style={styles.textInput} placeholder="Your email" onChangeText={(email) => this.setState({ email })} />
-                    <TextInput style={styles.textInput} placeholder="Topic" onChangeText={(topic) => this.setState({ topic })} />
-                    <TextInput style={[styles.textInput, { height: 100 }]} placeholder="Text" onChangeText={(text) => this.setState({ text })} />
+                    <TextInput style={styles.textInput} placeholder="Your email" onChangeText={(email) => this.setState({ email })} value={this.state.email}/>
+                    <TextInput style={styles.textInput} placeholder="Topic" onChangeText={(topic) => this.setState({ topic })} value={this.state.topic}/>
+                    <TextInput style={[styles.textInput, { height: 100 }]} placeholder="Text" onChangeText={(text) => this.setState({ text })} value={this.state.text}/>
 
                     <TouchableOpacity style={styles.sendMailButton} onPress={this.handleSendEmail} >
                         <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
