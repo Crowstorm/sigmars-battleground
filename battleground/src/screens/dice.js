@@ -98,7 +98,7 @@ class DiceScreen extends React.Component {
 
         let renderDiceResult = this.handleRenderRolledContent();
         let renderDiceReroll = this.renderDiceReroll();
-        let diceButtonText = (this.props.dice.isRolled) ? 'Reroll Dice' : 'Roll The Dice'
+        let diceButtonText = (this.props.dice.isRolled) ? 'Reroll All Dice' : 'Roll The Dice'
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
                 <View>
@@ -110,7 +110,9 @@ class DiceScreen extends React.Component {
                         onChangeText={(value) => this.handleNumberOfDice(value)}
                     />
                 </View>
+                
                 {renderDiceResult}
+
                 <View style={styles.rerollView}>
                     {renderDiceReroll}
                 </View>

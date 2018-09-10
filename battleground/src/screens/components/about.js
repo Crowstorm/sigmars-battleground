@@ -15,7 +15,12 @@ class About extends React.Component {
                 <View style={styles.container}>
                     <View style={styles.aboutText}>
                         <Text>About</Text>
-                        <Text>Icons: https://game-icons.net/</Text>
+                        <Text style={styles.text}>AoS Battleground was created to speed up the process of setting up the Age of Sigmar playing field. Quickly generate your terrain and scenery and don't waste time for rolling the
+                            dice on your own. {"\n"}
+                            Second module - dice rolling - might come in handy when you have to roll a lot of dice at once. App rolls and counts everything for you, leaving you more time to actually play the game.
+                        </Text>
+                        <Text style={styles.text}>Programmer: Mateusz Mazur (Big Paws)</Text>
+                        <Text style={styles.text}>Icons: https://game-icons.net/</Text>
                     </View>
                     <View style={styles.buttonContainer}>
                         <TouchableOpacity onPress={() => this.props.toggleAbout()}>
@@ -34,8 +39,14 @@ const styles = StyleSheet.create({
     },
     aboutText:{
         flex: 1,
+        paddingLeft: "5%",
+        paddingRight: "5%",
         alignItems: "center",
         justifyContent: "center"
+    },
+    text:{
+        marginTop: "2%",
+        textAlign: "center"
     },
     buttonContainer: {
         height: "10%",

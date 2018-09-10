@@ -47,21 +47,21 @@ const startTabs = () => {
                         ]
                     }
                 },
-                {
-                    screen: "battleground.WarscrollScreen",
-                    label: "Warscrolls",
-                    title: "Warscrolls",
-                    icon: sources[4],
-                    navigatorButtons: {
-                        leftButtons: [
-                            {
-                                icon: sources[3],
-                                title: "Menu",
-                                id: "sideDrawerToggle"
-                            }
-                        ]
-                    }
-                },
+                // {
+                //     screen: "battleground.WarscrollScreen",
+                //     label: "Warscrolls",
+                //     title: "Warscrolls",
+                //     icon: sources[4],
+                //     navigatorButtons: {
+                //         leftButtons: [
+                //             {
+                //                 icon: sources[3],
+                //                 title: "Menu",
+                //                 id: "sideDrawerToggle"
+                //             }
+                //         ]
+                //     }
+                // },
             ],
             drawer: {
                 left: {

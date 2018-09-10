@@ -31,6 +31,9 @@ class ContactForm extends React.Component {
                 animationType="slide">
 
                 <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
+                    <Text style={styles.text}>
+                        Use this contact form to contact me about bugs, features that you'd like to see added or just send me your thoughts about the app. Don't be shy.
+                    </Text>
                     <TextInput style={styles.textInput} placeholder="Your email" onChangeText={(email) => this.setState({ email })} />
                     <TextInput style={styles.textInput} placeholder="Topic" onChangeText={(topic) => this.setState({ topic })} />
                     <TextInput style={[styles.textInput, { height: 100 }]} placeholder="Text" onChangeText={(text) => this.setState({ text })} />
@@ -96,6 +99,11 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 16,
         padding: 10
+    },
+    text:{
+        paddingLeft: "5%",
+        paddingRight: "5%",
+        textAlign: "center"
     },
 })
 
