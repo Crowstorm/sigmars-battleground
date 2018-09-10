@@ -16,7 +16,6 @@ class ContactForm extends React.Component {
     }
 
     handleSendEmail = () => {
-        console.log('dziala?')
         const email = this.state.email;
         const topic = this.state.topic;
         const text = this.state.text;

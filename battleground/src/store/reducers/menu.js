@@ -1,5 +1,5 @@
 const initialState = {
-    contactFormOpen: true,
+    contactFormOpen: false,
     aboutOpen: false,
 }
 

@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import SplashScreen from './screens/splash';
 import MainMapScreen from './screens/mainMap';
 import DiceScreen from './screens/dice';
-import ContactForm from './screens/contact'
 import SideDrawer from './screens/components/sideDrawer';
+import WarscrollScreen from './screens/warscroll';
 
 import configureStore from './store/configureStore'
 
@@ -15,7 +15,8 @@ const store = configureStore();
 Navigation.registerComponent("battleground.SplashScreen", () => SplashScreen, store, Provider);
 Navigation.registerComponent("battleground.MainMapScreen", () => MainMapScreen, store, Provider);
 Navigation.registerComponent("battleground.DiceScreen", () => DiceScreen, store, Provider);
-//Navigation.registerComponent("battleground.ContactForm", () => ContactForm, store, Provider);
+Navigation.registerComponent("battleground.WarscrollScreen", () => WarscrollScreen, store, Provider);
+
 
 //start app
 Navigation.startSingleScreenApp({
