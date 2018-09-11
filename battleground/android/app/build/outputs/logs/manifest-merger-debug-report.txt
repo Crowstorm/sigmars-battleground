@@ -2,7 +2,7 @@
 manifest
 ADDED from C:\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:1:1-28:12
 	package
-		ADDED from C:\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:2:5-31
+		ADDED from C:\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:2:5-34
 		INJECTED from C:\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -61,7 +61,7 @@ MERGED from [org.webkit:android-jsc:r174650] C:\sigmars-battleground\battlegroun
 		ADDED from C:\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:14:7-38
 	android:name
 		ADDED from C:\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:10:7-38
-activity#com.battleground.MainActivity
+activity#com.aosbattleground.MainActivity
 ADDED from C:\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:15:7-24:18
 	android:label
 		ADDED from C:\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:17:9-41
