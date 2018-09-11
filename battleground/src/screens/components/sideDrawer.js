@@ -7,7 +7,8 @@ import ContactForm from '../contact';
 import About from './about';
 import { toggleContactForm, toggleAbout, sendEmail } from '../../store/actions/menu';
 
-import Mailbox from '../../assets/buttons/mailbox.png';
+import Envelope from '../../assets/buttons/envelope.png';
+import Question from '../../assets/buttons/question.png';
 
 
 class SideDrawer extends React.Component {
@@ -17,13 +18,13 @@ class SideDrawer extends React.Component {
                 <TouchableOpacity onPress={() => this.props.toggleContactForm()}>
                     <View style={styles.buttonStyle}>
                         <Text style={styles.buttonText}>Contact Form</Text>
-                        <Image style={styles.buttonImage} source={Mailbox} />
+                        <Image style={styles.buttonImage} source={Envelope} />
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.props.toggleAbout()}>
                     <View style={styles.buttonStyle}>
                         <Text style={styles.buttonText}>About</Text>
-                        <Image style={styles.buttonImage} source={Mailbox} />
+                        <Image style={styles.buttonImage} source={Question} />
                     </View>
                 </TouchableOpacity>
                 <ContactForm {...this.props} />
