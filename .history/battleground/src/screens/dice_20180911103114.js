@@ -110,28 +110,21 @@ class DiceScreen extends React.Component {
 
                     <View style={styles.diceSingleResultContainer}>
                         <Text style={styles.diceResultText}>Number of 4s and above:<Text style={styles.diceResultTextGenerated}>  {_four}  </Text></Text>
-                        <TouchableOpacity onPress={() => this.handleNewRollAmount(_four)}>
-                            <Image source={Roll} style={styles.smallRollButton} />
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={styles.diceSingleResultContainer}>
-                        <Text style={styles.diceResultText}>Number of 3s and above:<Text style={styles.diceResultTextGenerated}>  {_three}  </Text></Text>
-                        <TouchableOpacity onPress={() => this.handleNewRollAmount(_three)}>
+                        <TouchableOpacity onPress={() => this.handleNewRollAmount(_six)}>
                             <Image source={Roll} style={styles.smallRollButton} />
                         </TouchableOpacity>
                     </View>
 
                     <View style={styles.diceSingleResultContainer}>
                         <Text style={styles.diceResultText}>Number of 2s and above:<Text style={styles.diceResultTextGenerated}>  {_two}  </Text></Text>
-                        <TouchableOpacity onPress={() => this.handleNewRollAmount(_two)}>
+                        <TouchableOpacity onPress={() => this.handleNewRollAmount(_six)}>
                             <Image source={Roll} style={styles.smallRollButton} />
                         </TouchableOpacity>
                     </View>
 
                     <View style={styles.diceSingleResultContainer}>
-                        <Text style={styles.diceResultText}>Number of 1s:<Text style={styles.diceResultTextGenerated}>  {_one}  </Text></Text>
-                        <TouchableOpacity onPress={() => this.handleNewRollAmount(_one)}>
+                        <Text style={styles.diceResultText}>Number of 1s:<Text style={styles.diceResultTextGenerated}>  {one}  </Text></Text>
+                        <TouchableOpacity onPress={() => this.handleNewRollAmount(_six)}>
                             <Image source={Roll} style={styles.smallRollButton} />
                         </TouchableOpacity>
                     </View>
@@ -145,8 +138,7 @@ class DiceScreen extends React.Component {
 
         let renderDiceResult = this.handleRenderRolledContent();
         let renderDiceReroll = this.renderDiceReroll();
-        // let diceButtonText = (this.props.dice.isRolled) ? 'Reroll All Dice' : 'Roll The Dice'
-        let diceButtonText ='Roll The Dice';
+        let diceButtonText = (this.props.dice.isRolled) ? 'Reroll All Dice' : 'Roll The Dice'
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
                 <View>
@@ -201,8 +193,7 @@ const styles = StyleSheet.create({
     },
     diceSingleResultContainer: {
         flexDirection: "row",
-        alignItems: "center",
-        padding: 5
+        alignItems: "center"
     },
     diceResultText: {
         color: "#AB7A30",
