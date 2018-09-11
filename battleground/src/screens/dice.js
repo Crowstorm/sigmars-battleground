@@ -41,6 +41,10 @@ class DiceScreen extends React.Component {
     }
 
     handleNumberOfDice = (value) => {
+        console.log(value);
+        if(value === NaN){
+            this.props.setNumberOfDice(0)
+        }
         let number = parseInt(value);
         this.props.setNumberOfDice(number);
     }
@@ -147,13 +151,14 @@ class DiceScreen extends React.Component {
         let renderDiceReroll = this.renderDiceReroll();
         // let diceButtonText = (this.props.dice.isRolled) ? 'Reroll All Dice' : 'Roll The Dice'
         let diceButtonText ='Roll The Dice';
+        let diceToRoll = (this.props.dice.numberOfDice) ? this.props.dice.numberOfDice.toString() : '0';
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
                 <View>
                     <Text style={styles.diceResultText}> Number of dice</Text>
                     <TextInput style={styles.textInput}
                         keyboardType='numeric'
-                        value={this.props.dice.numberOfDice.toString()}
+                        value={(this.props.dice.numberOfDice) ? this.props.dice.numberOfDice.toString() : '0' }
                         underlineColorAndroid='transparent'
                         onChangeText={(value) => this.handleNumberOfDice(value)}
                     />
@@ -167,7 +172,7 @@ class DiceScreen extends React.Component {
                 <TouchableOpacity style={[styles.prerollRollButton, (this.props.dice.isRolled) ? styles.rollButton : styles.prerollRollButton]} onPress={this.handleRollDice} >
                     <LinearGradient colors={['#192f6a', '#3b5998', '#192f6a']} style={{ borderRadius: 10 }}>
                         <View style={styles.test}>
-                            <Text style={styles.rollButtonText}>{diceButtonText} ({this.props.dice.numberOfDice})</Text>
+                            <Text style={styles.rollButtonText}>{diceButtonText} ({diceToRoll})</Text>
 
                             <Image source={Roll} style={{ height: 30, width: 30 }} />
                         </View>
