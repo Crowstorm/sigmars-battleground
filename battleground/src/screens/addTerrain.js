@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
+import TerrainSchema from '../schemas/terrainSchema';
+
 const Realm = require('realm');
 
 
@@ -18,6 +20,7 @@ class AddTerrain extends React.Component {
                 realm.create('Dog', { name: 'Rex' });
             });
             this.setState({ realm });
+            console.log(realm.name)
         });
     }
 
