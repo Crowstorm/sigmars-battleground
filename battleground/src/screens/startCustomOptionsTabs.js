@@ -19,9 +19,9 @@ const startTabs = () => {
             tabs: [
                 {
                     screen: "battleground.MainMapScreen",
-                    label: "Battleground",
-                    title: "Battleground",
-                    icon: sources[1],
+                    label: "Terrain",
+                    title: "Add Your Terrain",
+                    icon: require('../assets/buttons/windmill.png'),
                     navigatorButtons: {
                         leftButtons: [
                             {
