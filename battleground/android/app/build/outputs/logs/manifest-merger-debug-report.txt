@@ -22,14 +22,6 @@ ADDED from C:\battleground\sigmars-battleground\battleground\android\app\src\mai
 MERGED from [com.facebook.react:react-native:0.55.4] C:\battleground\sigmars-battleground\battleground\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\AndroidManifest.xml:11:5-78
 	android:name
 		ADDED from C:\battleground\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:5:22-75
-uses-permission#android.permission.CAMERA
-ADDED from C:\battleground\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:6:5-65
-	android:name
-		ADDED from C:\battleground\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:6:22-62
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\battleground\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:7:5-80
-	android:name
-		ADDED from C:\battleground\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:7:22-78
 application
 ADDED from C:\battleground\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:9:5-26:19
 MERGED from [battleground:react-native-navigation:unspecified] C:\battleground\sigmars-battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-navigation\unspecified\AndroidManifest.xml:11:5-18:19
@@ -166,6 +158,8 @@ ADDED from [battleground:react-native-image-picker:unspecified] C:\battleground\
 		ADDED from [battleground:react-native-image-picker:unspecified] C:\battleground\sigmars-battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-image-picker\unspecified\AndroidManifest.xml:19:17-55
 	android:name
 		ADDED from [battleground:react-native-image-picker:unspecified] C:\battleground\sigmars-battleground\battleground\android\app\build\intermediates\exploded-aar\battleground\react-native-image-picker\unspecified\AndroidManifest.xml:18:17-67
+android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from C:\battleground\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:1:1-28:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 android:uses-permission#android.permission.READ_PHONE_STATE
 IMPLIED from C:\battleground\sigmars-battleground\battleground\android\app\src\main\AndroidManifest.xml:1:1-28:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 android:uses-permission#android.permission.READ_EXTERNAL_STORAGE

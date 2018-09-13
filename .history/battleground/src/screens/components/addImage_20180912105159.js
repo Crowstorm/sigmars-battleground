@@ -3,7 +3,7 @@ import {View, Text, Button, Image, AsyncStorage} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { DocumentPicker, DocumentPickerUtil } from 'react-native-document-picker';
 
-class AddImage extends React.Component{
+class AddFile extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -32,4 +32,4 @@ class AddImage extends React.Component{
     }
 }
 
-export default AddImage;
+export default AddFile;

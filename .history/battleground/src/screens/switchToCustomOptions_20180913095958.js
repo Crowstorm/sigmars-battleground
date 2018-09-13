@@ -1,8 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import AddImage from './components/addImage';
+import AddFile from './components/addFile';
+
+import startCustomOptionsTabs from './startCustomOptionsTabs';
+
 
 class WarscrollScreen extends React.Component {
     static navigatorStyle = {
@@ -17,22 +20,20 @@ class WarscrollScreen extends React.Component {
         this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent)
     }
     onNavigatorEvent = (e) => {
-        if (e.type === 'NavBarButtonPress') {
-            if (e.id === "sideDrawerToggle") {
-                this.props.navigator.toggleDrawer({
-                    side: "left",
-                });
-            }
+        if (e.id === 'bottomTabSelected') {
+            startCustomOptionsTabs();
         }
+    }
+
+    startCustomOptionsTabs = () =>{
+        startCustomOptionsTabs();
     }
 
     render() {
         return (
             <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.container}>
-                <Text>Elo</Text>
-                <AddImage />
-                <Text>List placeholder</Text>
-                <Text>Add list button placeholder</Text>
+                <Text>In this module you can customize your app</Text>
+                <Button title="Go" onPress={() => this.startCustomOptionsTabs()}/>
             </LinearGradient>
         )
     }
