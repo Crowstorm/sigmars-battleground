@@ -54,10 +54,10 @@ export const rerollDice = (diceValue) => {
         let value = diceValue;
         let rolledDice = getState().dice.rolledDice;
         rolledDice = rolledDice.filter(dice => dice > value);
-      //  console.log(rolledDice);
+        console.log(rolledDice);
 
         let diceToReroll = getState().dice.numberOfDice - rolledDice.length;
-      //  console.log(diceToReroll);
+        console.log(diceToReroll);
 
         let one = 0, two = 0, three = 0, four = 0, five = 0, six = 0;
         for (let i = 0; i < diceToReroll; i++) {

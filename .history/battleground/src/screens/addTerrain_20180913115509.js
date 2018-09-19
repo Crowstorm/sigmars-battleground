@@ -18,7 +18,7 @@ class AddTerrain extends React.Component {
             //     realm.create('Dog', { name: 'Rex' });
             // });
             this.setState({ realm });
-            console.log({realm})
+            // console.log({realm})
         });
     }
 
